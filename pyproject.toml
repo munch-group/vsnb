@@ -114,6 +114,6 @@ cmd = "./scripts/bump_changelog.py --yes"
 description = "Bump version patch and build/release conda packages"
 
 [tool.pixi.tasks.github-release]
-cmd = "./scripts/release-tag.sh"
+cmd = "./scripts/github-release.sh"
 description = "Release latest version on Github"
 
