@@ -90,7 +90,7 @@ cmd = "pip install -e ."
 description = "Install the package in development mode"
 
 [tool.pixi.tasks.docs]
-cmd = "./.scripts/docs-run-notebooks.sh && ./.scripts/docs-build-render.sh"
+cmd = "./scripts/docs-run-notebooks.sh && ./scripts/docs-build-render.sh"
 description = "Run documentation notebooks and build quartodoc api docs"
 
 [tool.pixi.tasks.git-remove-untracked]
@@ -106,14 +106,14 @@ args = [
   { "arg" = "kind", "default" = "patch" },  # can be patch, minor, major
   { "arg" = "flag", "default" = "" },     # can be --pre, --release
 ]
-cmd = "./.scripts/bump_version.py --{{ kind }} {{ flag }} &&  git add -u &&  git commit -m '{{ kind }} {{ flag }} version bump' && git push" 
+cmd = "./scripts/bump_version.py --{{ kind }} {{ flag }} &&  git add -u &&  git commit -m '{{ kind }} {{ flag }} version bump' && git push" 
 description = "Bump version patch and build/release conda packages"
 
 [tool.pixi.tasks.bump-changelog]
-cmd = "./.scripts/bump_changelog.py --yes"
+cmd = "./scripts/bump_changelog.py --yes"
 description = "Bump version patch and build/release conda packages"
 
 [tool.pixi.tasks.github-release]
-cmd = "./.scripts/release-tag.sh"
+cmd = "./scripts/release-tag.sh"
 description = "Release latest version on Github"
 
