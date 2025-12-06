@@ -14,7 +14,7 @@ from pathlib import Path
 from typing import Any, TypeVar, List, Tuple, Dict, Union
 from collections.abc import Sequence, MutableSequence, Callable
 from itertools import cycle
-
+from IPython.display import display, HTML
 
 # def random_color():
 #     return '#'+''.join(random.sample('0123456789ABCDEF', 6))
@@ -213,7 +213,7 @@ class suppress_plotting_output:
 
     
 
-def set_vscode_theme(dark:bool=None, cmap=None):
+def set_vscode_theme(theme=None, cmap=None):
     """
     Set the default theme for the graph plotter.
     The theme can be either 'dark' or 'light'. The default theme is autodetected.
@@ -239,7 +239,7 @@ def set_vscode_theme(dark:bool=None, cmap=None):
         # dark_cmap = lighten_colors(cmap, factor=0, as_cmap=True)
         # light_cmap = lighten_colors(cmap, factor=0, as_cmap=True)
 
-        if dark is None:
+        if theme is None:
             dark = is_vscode_dark_theme()
 
         env_theme = os.environ.get('NOTEBOOK_THEME', None)
@@ -290,14 +290,18 @@ def set_vscode_theme(dark:bool=None, cmap=None):
             'figure.figsize': (5, 3.7),            
         })
 
-
-
-def set_theme(name: str = None):
-    """Backwards compatibility wrapper for set_vscode_theme."""
-    if name is not None:
-        set_vscode_theme(dark='dark' in name.lower())
-    else:
-        set_vscode_theme()
+        # Apply CSS to make ipywidget backgrounds transparent and match VS Code theme
+        display(HTML("""
+        <style>
+        .cell-output-ipywidget-background {
+            background-color: transparent !important;
+        }
+        :root {
+            --jp-widgets-color: var(--vscode-editor-foreground);
+            --jp-widgets-font-size: var(--vscode-editor-font-size);
+        }  
+        </style>                          
+        """))
 
 
 def black_white(ax):
