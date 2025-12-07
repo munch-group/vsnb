@@ -213,7 +213,7 @@ class suppress_plotting_output:
 
     
 
-def set_vscode_theme(theme=None, cmap=None):
+def set_vscode_theme(dark=None, cmap=None, figsize=(5, 3.7), font_scale=1.0):
     """
     Set the default theme for the graph plotter.
     The theme can be either 'dark' or 'light'. The default theme is autodetected.
@@ -225,11 +225,14 @@ def set_vscode_theme(theme=None, cmap=None):
         _description_
     """
 
+    if dark not in [None, True, False]:
+        raise ValueError("dark parameter must be None, True, or False.")
+
     with suppress_plotting_output():
 
         set_matplotlib_formats('retina', 'png')
 
-        sns.set_context('paper', font_scale=0.9)
+        sns.set_context('paper', font_scale=font_scale)
 
         # if cmap is None:
         #     cmap = plt.get_cmap()
@@ -239,7 +242,7 @@ def set_vscode_theme(theme=None, cmap=None):
         # dark_cmap = lighten_colors(cmap, factor=0, as_cmap=True)
         # light_cmap = lighten_colors(cmap, factor=0, as_cmap=True)
 
-        if theme is None:
+        if dark is None:
             dark = is_vscode_dark_theme()
 
         env_theme = os.environ.get('NOTEBOOK_THEME', None)
@@ -248,8 +251,7 @@ def set_vscode_theme(theme=None, cmap=None):
             print("Overriding theme from NOTEBOOK_THEME environment variable.", sys.stderr)
 
         if dark:
-            pass
-            # plt.style.use('dark_background')
+            plt.style.use('dark_background')
         else:
             plt.style.use('default')
 
@@ -259,12 +261,14 @@ def set_vscode_theme(theme=None, cmap=None):
                 'axes.facecolor': '#1F1F1F',
                 'grid.linewidth': 0.4,
                 'grid.alpha': 0.3,
+                'grid.color': '#ffffff',            
                 })
             # plt.set_cmap(cmap if cmap else dark_cmap)        
         else:
             plt.rcParams.update({
                 'figure.facecolor': 'white', 
                 'axes.facecolor': 'white',
+                'grid.color': '#000000',
                 'grid.linewidth': 0.4,
                 'grid.alpha': 0.7,            
                 })
@@ -287,7 +291,7 @@ def set_vscode_theme(theme=None, cmap=None):
             'xtick.bottom': False,
             'ytick.left': False,
             'legend.frameon': False,
-            'figure.figsize': (5, 3.7),            
+            'figure.figsize': figsize,            
         })
 
         # Apply CSS to make ipywidget backgrounds transparent and match VS Code theme
@@ -314,13 +318,14 @@ def black_white(ax):
     return 'black' if luminance > 0.5 else '#FDFDFD'
 
 class vscode_theme:
-    def __init__(self, dark:bool = None):
-        self.dark = dark if dark is not None else vscode_theme_is_dark()
+    def __init__(self, dark: bool | None = None, **theme_kwargs):
+        self.dark = dark if dark is not None else is_vscode_dark_theme()    
+        self.theme_kwargs = theme_kwargs
         self.orig_rcParams = matplotlib.rcParams.copy()
         self.orig_cmap = matplotlib.pyplot.get_cmap()
-
+        
     def __enter__(self):
-        set_vscode_theme(self.dark)
+        set_vscode_theme(self.dark, **self.theme_kwargs)
 
     def __exit__(self, exc_type, exc_value, traceback):
         matplotlib.rcParams.update(self.orig_rcParams)

@@ -50,6 +50,8 @@ from rich.progress import Progress, BarColumn, TextColumn
 from rich.layout import Layout
 from rich.text import Text
 
+from IPython import get_ipython
+
 # tqdm for Jupyter
 from tqdm import tqdm as std_tqdm
 try:
@@ -866,8 +868,6 @@ class CPUMonitor:
         Display width in characters. If None, auto-detects terminal/notebook width.
     update_interval : float, default=0.5
         Time between updates in seconds
-    per_node_layout : bool, default=True
-        If True, group CPUs by node in column layout
     show_summary : bool, default=True
         Show summary statistics when monitoring ends
     persist : bool, default=False
@@ -876,7 +876,7 @@ class CPUMonitor:
     color : bool, default=False
         If True, use color coding (green < 50%, yellow 50-80%, red > 80%).
         If False (default), all bars are gray.
-    summary_table : bool, default=False
+    summary : bool, default=False
         If True, display results as an HTML table with mean CPU usage per core
         instead of progress bars. Memory usage (mean/max) is shown next to the
         node name. The table will be shown after completion regardless of persist setting.
@@ -902,7 +902,7 @@ class CPUMonitor:
     >>> with CPUMonitor(color=True):
     ...     result = computation()  # Use color coding
 
-    >>> with CPUMonitor(summary_table=True):
+    >>> with CPUMonitor(summary=True):
     ...     result = computation()  # Show table with CPU and memory stats
     """
 
@@ -910,21 +910,19 @@ class CPUMonitor:
         self,
         width: Optional[int] = None,
         update_interval: float = 0.5,
-        per_node_layout: bool = True,
         show_summary: bool = True,
         persist: bool = False,
         color: bool = False,
-        summary_table: bool = False,
+        summary: bool = False,
         fold: int = 16,
         group_by: str = "node"
     ):
         self.width = width
         self.update_interval = update_interval
-        self.per_node_layout = per_node_layout
         self.show_summary = show_summary
         self.persist = persist
         self.color = color
-        self.summary_table = summary_table
+        self.summary = summary
         self.fold = fold
         self.group_by = group_by
 
@@ -1277,8 +1275,8 @@ class CPUMonitor:
 
     def _generate_html_display(self, summary_mode=False):
         """Generate HTML for VSCode display."""
-        # If summary_table mode is enabled and we're in summary, show table
-        if self.summary_table and summary_mode:
+        # If summary mode is enabled and we're in summary, show table
+        if self.summary and summary_mode:
             return self._generate_html_table()
 
         html = '<div style="font-family: monospace; font-size: 10px; padding: 10px;">'
@@ -1615,8 +1613,8 @@ class CPUMonitor:
             bar.close()
         self._tqdm_bars = []
 
-        # Handle display based on persist and summary_table settings
-        show_final_display = self.persist or self.summary_table
+        # Handle display based on persist and summary settings
+        show_final_display = self.persist or self.summary
 
         if show_final_display:
             # Show summary (bars or table)
@@ -1653,7 +1651,7 @@ class CPUMonitor:
 # Decorator
 # ============================================================================
 
-def monitor_cpu(func: Callable = None, **monitor_kwargs):
+def monitor(func: Callable = None, **monitor_kwargs):
     """
     Decorator for CPU monitoring.
 
@@ -1666,12 +1664,12 @@ def monitor_cpu(func: Callable = None, **monitor_kwargs):
 
     Examples
     --------
-    >>> @monitor_cpu
+    >>> @monitor
     >>> def my_function():
     ...     # computation
     ...     pass
 
-    >>> @monitor_cpu(width=100, update_interval=1.0)
+    >>> @monitor(width=100, update_interval=1.0)
     >>> def my_function():
     ...     # computation
     ...     pass
@@ -1684,10 +1682,10 @@ def monitor_cpu(func: Callable = None, **monitor_kwargs):
         return wrapper
 
     if func is None:
-        # Called with arguments: @monitor_cpu(...)
+        # Called with arguments: @monitor(...)
         return decorator
     else:
-        # Called without arguments: @monitor_cpu
+        # Called without arguments: @monitor
         return decorator(func)
 
 
@@ -1719,6 +1717,8 @@ class CPUMonitorMagics(Magics):
                 help='Maximum number of CPU bars per row before wrapping (default: 16)')
     @argument('--group-by', '-g', type=str, default='node', choices=['node', 'task'],
                 help='Group CPU bars by "node" (default) or "task"')
+    @argument('--per-node-layout', '-n', action='store_true',
+                help='Use per-node layout for CPU bars')
     def monitor(self, line, cell):
         """
         Monitor CPU usage during cell execution.
@@ -1745,7 +1745,7 @@ class CPUMonitorMagics(Magics):
         args = parse_argstring(self.monitor, line)
 
         monitor = CPUMonitor(width=args.width, update_interval=args.interval,
-                        persist=args.persist, color=args.color, summary_table=args.summary,
+                        persist=args.persist, color=args.color, summary=args.summary,
                         fold=args.fold, group_by=args.group_by)
 
         monitor.start()
