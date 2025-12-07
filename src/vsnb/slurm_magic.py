@@ -5,10 +5,10 @@ This version can pass the notebook's global scope to the subprocess and retrieve
 the updated state back, making isolated cells contribute to the notebook scope.
 
 Usage:
-    %%srun
+    %%slurm
     # Your code here - behaves like a normal cell but runs in subprocess
-    
-    %%srun --no-state
+
+    %%slurm --no-state
     # Run truly isolated without state transfer
 """
 
@@ -21,6 +21,7 @@ import pickle
 import dill  # Better serialization than pickle
 import json
 import types
+import time
 from pathlib import Path
 from IPython.core.magic import Magics, magics_class, cell_magic
 from IPython.core.getipython import get_ipython
@@ -206,24 +207,28 @@ if len(sys.argv) > 2:
 
 
 @magics_class
-class RunSrunMagic(Magics):
-    
+class SlurmMagic(Magics):
+
     @cell_magic
-    def srun(self, line, cell):
+    def slurm(self, line, cell):
         """
-        Run code in a subprocess with optional state transfer.
-        
+        Run code in a SLURM job with optional state transfer.
+
         Usage:
-            %%srun [options]
+            %%slurm [options]
             code...
-        
+
         Options:
             --no-imports : Don't include previous imports
             --no-state : Don't transfer global state (true isolation)
             --python PATH : Use specific Python interpreter
-            --timeout SECONDS : Set subprocess timeout (default: 30)
+            --timeout SECONDS : Set timeout for job
             --show-script : Print the generated script before running
             --show-state : Show what variables are being transferred
+            --mem VALUE : Memory per CPU (SLURM)
+            --cores VALUE : CPUs per task (SLURM)
+            --time VALUE : Walltime limit (SLURM)
+            --account VALUE : Account to charge (SLURM)
         """
         
         # Parse arguments
@@ -232,7 +237,7 @@ class RunSrunMagic(Magics):
         no_state = '--no-state' in args
         show_script = '--show-script' in args
         show_state = '--show-state' in args
-        timeout = 30
+        timeout = None
         python_path = sys.executable
         
         # Parse timeout
@@ -251,22 +256,26 @@ class RunSrunMagic(Magics):
                 python_path = args[idx + 1]
 
         # slurm memory per cpu
+        mem = None
         if '--mem' in args:
             idx = args.index('--mem')
             if idx + 1 < len(args):
                 mem = args[idx + 1]
 
         # slurm nr cpus
+        cores = None
         if '--cores' in args:
             idx = args.index('--cores')
             if idx + 1 < len(args):
                 cores = args[idx + 1]
 
+        walltime = None
         if '--time' in args:
             idx = args.index('--time')
             if idx + 1 < len(args):
                 walltime = args[idx + 1]
 
+        account = None
         if '--account' in args:
             idx = args.index('--account')
             if idx + 1 < len(args):
@@ -280,10 +289,8 @@ class RunSrunMagic(Magics):
         if not no_imports:
             try:
                 imports = get_all_previous_imports(self.shell)
-                if imports:
-                    print(f"Collected {len(imports)} import statements")
-            except Exception as e:
-                print(f"Warning: Could not collect imports: {e}")
+            except Exception:
+                pass
         
         # Prepare state transfer
         state_file = None
@@ -306,17 +313,14 @@ class RunSrunMagic(Magics):
                         print(f"  {key}: {reason}")
                 print("=" * 50)
                 print()
-            else:
-                print(f"Transferring {len(serializable)} variables to subprocess")
-                if failed:
-                    print(f"Skipping {len(failed)} non-serializable variables")
             
             # Create temporary files for state transfer
-            with tempfile.NamedTemporaryFile(mode='wb', suffix='.pkl', delete=False) as f:
+            # Use current directory (shared filesystem) instead of /tmp (local to node)
+            with tempfile.NamedTemporaryFile(mode='wb', suffix='.pkl', delete=False, dir='.') as f:
                 dill.dump(serializable, f)
                 state_file = f.name
-            
-            with tempfile.NamedTemporaryFile(mode='wb', suffix='.pkl', delete=False) as f:
+
+            with tempfile.NamedTemporaryFile(mode='wb', suffix='.pkl', delete=False, dir='.') as f:
                 output_state_file = f.name
         
         # Create the script
@@ -331,78 +335,123 @@ class RunSrunMagic(Magics):
             print()
         
         # Write script to temporary file
-        # with open('tmp.py', 'w') as f:
-        #     f.write(script)
-        #     script_file = 'tmp.py'
-        with tempfile.NamedTemporaryFile(mode='w', suffix='.py', delete=False) as f:
+        # Use current directory (shared filesystem) instead of /tmp (local to node)
+        with tempfile.NamedTemporaryFile(mode='w', suffix='.py', delete=False, dir='.') as f:
             f.write(script)
             script_file = f.name
         
+        output_file = None
         try:
-            # Prepare subprocess arguments
-            cmd = ['srun', f'--mem={mem}', f'--cores={cores}', '--nodes=1', f'--time={walltime}', f'--account={account}']
-            cmd.extend([python_path, script_file])
-            if not no_state:
-                cmd.extend([state_file, output_state_file])
-            
-            # Run the subprocess
-            print(f"Running in subprocess (timeout: {timeout}s)...")
-            print("-" * 50)
-            
-            print(" ".join(cmd))
+            # Create output file for stdout/stderr
+            with tempfile.NamedTemporaryFile(mode='w', suffix='.out', delete=False, dir='.') as f:
+                output_file = f.name
 
-            result = subprocess.run(
-                cmd,
-                capture_output=True,
-                text=True,
-                timeout=timeout
-            )
-            
-            # Print output
-            if result.stdout:
-                print(result.stdout, end='')
-            if result.stderr:
-                print(result.stderr, end='', file=sys.stderr)
-            
-            print("-" * 50)
-            
+            # Build sbatch command
+            sbatch_cmd = ['sbatch', '--parsable']
+            if mem:
+                sbatch_cmd.append(f'--mem={mem}')
+            if cores:
+                sbatch_cmd.append(f'--cpus-per-task={cores}')
+            sbatch_cmd.append('--nodes=1')
+            if walltime:
+                sbatch_cmd.append(f'--time={walltime}')
+            if account:
+                sbatch_cmd.append(f'--account={account}')
+            sbatch_cmd.extend([f'--output={output_file}', f'--error={output_file}'])
+
+            # Build the command to run
+            run_cmd = [python_path, script_file]
+            if not no_state:
+                run_cmd.extend([state_file, output_state_file])
+            sbatch_cmd.append('--wrap=' + ' '.join(run_cmd))
+
+            # Submit the job
+            result = subprocess.run(sbatch_cmd, capture_output=True, text=True)
             if result.returncode != 0:
-                print(f"Subprocess exited with code: {result.returncode}")
-            else:
-                print("Subprocess completed successfully")
-                
+                print("Failed")
+                return
+
+            job_id = result.stdout.strip()
+
+            # Poll for job state
+            poll_interval = 0.5
+            prev_state = None
+            final_state = None
+            start_time = time.time()
+
+            try:
+                while True:
+                    poll_result = subprocess.run(
+                        ['sacct', '-n', '-P', '-X', '-j', job_id,
+                         '--state=PENDING,RUNNING,CANCELLED,FAILED,COMPLETED,TIMEOUT,OUT_OF_MEMORY',
+                         '--format=state'],
+                        capture_output=True, text=True
+                    )
+                    state = poll_result.stdout.strip()
+
+                    if state and state != prev_state:
+                        if state == 'PENDING' and prev_state is None:
+                            print("Allocated...", end='', flush=True)
+                        elif state == 'RUNNING':
+                            print("Running...", end='', flush=True)
+                        prev_state = state
+
+                    if state in ('COMPLETED', 'FAILED', 'CANCELLED', 'TIMEOUT', 'OUT_OF_MEMORY'):
+                        final_state = state
+                        break
+
+                    if timeout and (time.time() - start_time) > timeout:
+                        # Cancel the job
+                        subprocess.run(['scancel', job_id], capture_output=True)
+                        final_state = 'TIMEOUT'
+                        break
+
+                    time.sleep(poll_interval)
+
+            except KeyboardInterrupt:
+                subprocess.run(['scancel', job_id], capture_output=True)
+                final_state = 'CANCELLED'
+
+            # Print output from job
+            if Path(output_file).exists():
+                with open(output_file, 'r') as f:
+                    output = f.read()
+                if output:
+                    print()
+                    print(output, end='')
+
+            # Handle final state
+            if final_state == 'COMPLETED':
                 # Load the updated state back into the notebook
                 if not no_state and output_state_file:
                     try:
                         with open(output_state_file, 'rb') as f:
                             updated_state = dill.load(f)
-                        
+
                         # Update the notebook's globals with the new state
-                        updated_count = 0
-                        new_vars = []
                         for key, value in updated_state.items():
                             if key not in self.shell.user_ns or \
                                not self._compare_values(self.shell.user_ns.get(key), value):
                                 self.shell.user_ns[key] = value
-                                if key not in serializable:
-                                    new_vars.append(key)
-                                else:
-                                    updated_count += 1
-                        
-                        if updated_count > 0 or new_vars:
-                            print(f"Updated {updated_count} variables in notebook scope")
-                            if new_vars:
-                                print(f"New variables: {', '.join(new_vars)}")
-                    except Exception as e:
-                        print(f"Warning: Could not load returned state: {e}")
-                        
-        except subprocess.TimeoutExpired:
-            print(f"\nError: Subprocess timed out after {timeout} seconds")
-        except Exception as e:
-            print(f"\nError running subprocess: {e}")
+                    except Exception:
+                        pass
+                print("Completed")
+            elif final_state == 'TIMEOUT':
+                print("Timeout")
+            elif final_state == 'CANCELLED':
+                print("Killed")
+            elif final_state == 'OUT_OF_MEMORY':
+                print("Out of Memory")
+            else:
+                print("Failed")
+
+        except KeyboardInterrupt:
+            print("Killed")
+        except Exception:
+            print("Failed")
         finally:
             # Clean up temporary files
-            for temp_file in [script_file, state_file, output_state_file]:
+            for temp_file in [script_file, state_file, output_state_file, output_file]:
                 if temp_file:
                     Path(temp_file).unlink(missing_ok=True)
     
@@ -425,21 +474,21 @@ class RunSrunMagic(Magics):
 
 # def load_ipython_extension(ipython):
 #     """Load the extension in IPython."""
-#     ipython.register_magics(RunSrunMagic)
-#     print("Enhanced srun magic loaded. Use %%srun to run cells with state transfer.")
+#     ipython.register_magics(SlurmMagic)
+#     print("Enhanced slurm magic loaded. Use %%slurm to run cells with state transfer.")
 
 
 # def unload_ipython_extension(ipython):
 #     """Unload the extension."""
-#     print("Enhanced srun magic unloaded.")
+#     print("Enhanced slurm magic unloaded.")
 
 
 # def register_magic():
 #     """Manually register the magic if not loading as extension."""
 #     ip = get_ipython()
 #     if ip:
-#         ip.register_magics(RunSrunMagic)
-#         print("Enhanced srun magic registered. Use %%srun for subprocess execution with state transfer.")
+#         ip.register_magics(SlurmMagic)
+#         print("Enhanced slurm magic registered. Use %%slurm for subprocess execution with state transfer.")
 #     else:
 #         print("No IPython instance found. This must be run in a Jupyter environment.")
 
