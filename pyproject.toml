@@ -89,7 +89,7 @@ pip = "*"
 
 [tool.pixi.tasks.install-dev]
 cmd = "pip install -e ."
-#cmd = "pip install --no-build-isolation --no-deps --disable-pip-version-check -e ."
+# cmd = "pip install --no-build-isolation --no-deps --disable-pip-version-check -e ."
 description = "Install the package in development mode"
 
 [tool.pixi.tasks.docs]

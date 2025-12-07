@@ -26,6 +26,7 @@ from IPython.core.magic import Magics, magics_class, cell_magic
 from IPython.core.getipython import get_ipython
 import numpy as np
 import pandas as pd
+import shutil
 
 
 def extract_imports_from_code(code):
@@ -422,26 +423,26 @@ class RunSrunMagic(Magics):
             return False
 
 
-def load_ipython_extension(ipython):
-    """Load the extension in IPython."""
-    ipython.register_magics(RunSrunMagic)
-    print("Enhanced srun magic loaded. Use %%srun to run cells with state transfer.")
+# def load_ipython_extension(ipython):
+#     """Load the extension in IPython."""
+#     ipython.register_magics(RunSrunMagic)
+#     print("Enhanced srun magic loaded. Use %%srun to run cells with state transfer.")
 
 
-def unload_ipython_extension(ipython):
-    """Unload the extension."""
-    print("Enhanced srun magic unloaded.")
+# def unload_ipython_extension(ipython):
+#     """Unload the extension."""
+#     print("Enhanced srun magic unloaded.")
 
 
-def register_magic():
-    """Manually register the magic if not loading as extension."""
-    ip = get_ipython()
-    if ip:
-        ip.register_magics(RunSrunMagic)
-        print("Enhanced srun magic registered. Use %%srun for subprocess execution with state transfer.")
-    else:
-        print("No IPython instance found. This must be run in a Jupyter environment.")
+# def register_magic():
+#     """Manually register the magic if not loading as extension."""
+#     ip = get_ipython()
+#     if ip:
+#         ip.register_magics(RunSrunMagic)
+#         print("Enhanced srun magic registered. Use %%srun for subprocess execution with state transfer.")
+#     else:
+#         print("No IPython instance found. This must be run in a Jupyter environment.")
 
 
-if __name__ == "__main__":
-    print(__doc__)
+# if __name__ == "__main__":
+#     print(__doc__)
