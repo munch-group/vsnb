@@ -25,6 +25,7 @@ dependencies = [
     "psutil",
     "rich",
     "tqdm",
+    "multiprocess",
 ]
 
 [project.urls]
