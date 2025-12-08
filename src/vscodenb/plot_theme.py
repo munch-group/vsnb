@@ -104,7 +104,8 @@ def get_vscode_theme() -> str | None:
 
 def is_vscode_dark_theme() -> bool:
     """Determine if a given VS Code theme name is dark or light."""
-    return 'dark' in get_vscode_theme().lower()
+    theme = get_vscode_theme()
+    return theme is None or 'dark' in theme.lower() # default to dark when failing on slurm
 
 
 def lighten_colors(colors, factor=0.0, n_colors=None, as_cmap=None, target_lightness=None):
