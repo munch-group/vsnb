@@ -137,7 +137,6 @@ def is_vscode_dark_theme(mode=None) -> bool:
             bg_color = ax.get_facecolor()
             plt.close(fig)
             luminance = matplotlib.colors.rgb_to_hsv(matplotlib.colors.to_rgb(bg_color))[2]
-            print(luminance)
             is_dark = luminance < 0.5
 
     return is_dark
@@ -238,7 +237,15 @@ def lighten_colors(colors, factor=0.0, n_colors=None, as_cmap=None, target_light
     return lightened
 
 
-def set_vscode_theme(mode=None, cmap=None, figsize=(5, 3.7), font_scale=1.0):
+# Add a style kwarg to vscode_theme: grid, ticks
+# and a frame kwarg that can be True/False
+# theme() standard plot
+# theme(style='grid') standard plot
+# theme(style='grid', frame=True) grid with frame
+# theme(style='ticks') despined ticks style 
+# theme(style='ticks', frame=True)
+
+def set_vscode_theme(mode=None, style='grid', frame=False, cmap=None, figsize=(5, 3.7), font_scale=1.0):
     """
     Set the default theme for the graph plotter.
     The theme can be either 'dark' or 'light'. The default theme is autodetected.
@@ -248,6 +255,10 @@ def set_vscode_theme(mode=None, cmap=None, figsize=(5, 3.7), font_scale=1.0):
     ----------
     mode : str, optional
         'dark' or 'light' to force a specific theme. If None, autodetected.
+    style : str, optional
+        'grid' for grid style, 'ticks' for ticks style.
+    frame : bool, optional
+        Whether to show frame around plots.
     cmap : Colormap, optional
         Matplotlib colormap to use for plots.
     figsize : tuple, optional
@@ -297,8 +308,8 @@ def set_vscode_theme(mode=None, cmap=None, figsize=(5, 3.7), font_scale=1.0):
             # plt.set_cmap(cmap if cmap else light_cmap)
 
         plt.rcParams.update({
-            'axes.grid': True,
-            'axes.grid.axis':     'both',
+            'axes.grid': style == 'grid',
+            'axes.grid.axis': 'both',
             'axes.grid.which': 'major',
             'axes.titlelocation': 'right',
             'axes.titlesize': 'large',
@@ -306,12 +317,12 @@ def set_vscode_theme(mode=None, cmap=None, figsize=(5, 3.7), font_scale=1.0):
             'axes.labelsize': 'medium',
             'axes.labelweight': 'normal',
             'axes.formatter.use_mathtext': True,
-            'axes.spines.left': False,
-            'axes.spines.bottom': False,
-            'axes.spines.top': False,
-            'axes.spines.right':  False,
-            'xtick.bottom': False,
-            'ytick.left': False,
+            'axes.spines.left': frame or style != 'grid',
+            'axes.spines.bottom': frame or style != 'grid',
+            'axes.spines.top': frame,
+            'axes.spines.right':  frame,
+            'xtick.bottom': style != 'grid',
+            'ytick.left': style != 'grid',
             'legend.frameon': False,
             'figure.figsize': figsize,            
         })
@@ -340,14 +351,16 @@ def black_white(ax):
     return 'black' if luminance > 0.5 else '#FDFDFD'
 
 class vscode_theme:
-    def __init__(self, mode=None, **theme_kwargs):
+    def __init__(self, mode=None, style='grid', frame=False, **theme_kwargs):
         self.mode = mode
+        self.style = style
+        self.frame = frame
         self.theme_kwargs = theme_kwargs
         self.orig_rcParams = matplotlib.rcParams.copy()
         self.orig_cmap = matplotlib.pyplot.get_cmap()
         
     def __enter__(self):
-        set_vscode_theme(mode=self.mode, **self.theme_kwargs)
+        set_vscode_theme(mode=self.mode, style=self.style, frame=self.frame, **self.theme_kwargs)
 
     def __exit__(self, exc_type, exc_value, traceback):
         matplotlib.rcParams.update(self.orig_rcParams)
