@@ -13,7 +13,7 @@ from .cpu_monitor import (
     get_cached_nodes,
 )
 from .slurm_magic import SlurmMagic
-from .utils import truncate_colormap
+from .utils import truncate_colormap, Left
 
 try:
     from IPython import get_ipython
