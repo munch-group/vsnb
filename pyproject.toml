@@ -109,6 +109,9 @@ description = "Removes untracked files and directories but respects your .gitign
 cmd = "git add -u && git commit && git push"
 description = "Release latest version on Github"
 
+[tool.pixi.tasks._add-commit]
+cmd = "git add -u && git commit"
+
 [tool.pixi.tasks.test]
 cmd = "python -m unittest"
 description = "Run tests"
@@ -123,6 +126,7 @@ args = [
   { "arg" = "flag", "default" = "" },     # can be --pre, --release
 ]
 cmd = "./scripts/bump_version.py --{{ kind }} {{ flag }} &&  git add -u &&  git commit -m '{{ kind }} {{ flag }} version bump' && git push" 
+depends-on = ["_add-commit"]
 description = "Bump version patch and build/release conda packages"
 
 [tool.pixi.tasks.github-release]
@@ -131,8 +135,8 @@ depends-on = ["bump-version"]
 description = "Release latest version on Github"
 
 [tool.pixi.tasks.submit-patch]
-cmd = "Update released!"
-depends-on = ["add-commit-push", "github-release"]
+cmd = "echo 'Update released!'"
+depends-on = ["github-release"]
 description = "Push committed patch make new release of package"
 
 [tool.pixi.tasks.acpr]
