@@ -101,13 +101,21 @@ description = "Install the package in development mode"
 cmd = "./scripts/docs-run-notebooks.sh && ./scripts/docs-build-render.sh"
 description = "Run documentation notebooks and build quartodoc api docs"
 
-[tool.pixi.tasks.git-remove-untracked]
-cmd = "git clean -fd"
+[tool.pixi.tasks.clean]
+cmd = "git clean -id"
 description = "Removes untracked files and directories but respects your .gitignores"
+
+[tool.pixi.tasks.add-commit-push]
+cmd = "git add -u && git commit && git push"
+description = "Release latest version on Github"
 
 [tool.pixi.tasks.test]
 cmd = "python -m unittest"
 description = "Run tests"
+
+# [tool.pixi.tasks.bump-changelog]
+# cmd = "./scripts/bump_changelog.py --yes"
+# description = "Bump version patch and build/release conda packages"
 
 [tool.pixi.tasks.bump-version]
 args = [
@@ -117,11 +125,16 @@ args = [
 cmd = "./scripts/bump_version.py --{{ kind }} {{ flag }} &&  git add -u &&  git commit -m '{{ kind }} {{ flag }} version bump' && git push" 
 description = "Bump version patch and build/release conda packages"
 
-[tool.pixi.tasks.bump-changelog]
-cmd = "./scripts/bump_changelog.py --yes"
-description = "Bump version patch and build/release conda packages"
-
 [tool.pixi.tasks.github-release]
 cmd = "./scripts/github-release.sh"
+depends-on = ["bump-version"]
 description = "Release latest version on Github"
 
+[tool.pixi.tasks.submit-patch]
+cmd = "Update released!"
+depends-on = ["add-commit-push", "github-release"]
+description = "Push committed patch make new release of package"
+
+[tool.pixi.tasks.acpr]
+depends-on = ["submit-patch"]
+description = "Alias for submit-patch"
