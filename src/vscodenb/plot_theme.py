@@ -327,7 +327,8 @@ def set_vscode_theme(mode=None, style='grid', frame=False, cmap=None, figsize=(5
             'figure.figsize': figsize,            
         })
 
-        # Apply CSS to make ipywidget backgrounds transparent and match VS Code theme
+        # Apply CSS to make ipywidget backgrounds transparent to match VS Code theme
+        # Also make tqdm progress bars less intrusive
         display(HTML("""
         <style>
         .cell-output-ipywidget-background {
@@ -342,6 +343,36 @@ def set_vscode_theme(mode=None, style='grid', frame=False, cmap=None, figsize=(5
             --jp-widgets-font-size: var(--vscode-editor-font-size);
         }  
         */
+
+        /* tqdm styling: */
+        .widget-label,
+        .widget-html,
+        .widget-button,
+        .widget-dropdown,
+        .widget-text,
+        .widget-textarea {
+            color: transparent !important;  /* Set to desired color */
+            font-size: 10px !important;      /* Font size */
+        }
+        div.widget-html-content > progress { /* Outer container */
+            height: 10px !important;
+        
+        }
+        div.jp-OutputArea-output td.output_html { /* tqdm HTML output area */
+            height: 5px !important;
+        }
+        div.progress { /* Jupyter Notebook (classic) */
+            height: 5px !important;
+            min-height: 5px !important;
+            margin-top: 12px !important;    
+        }
+        div.progress-bar { /* Inner bar */
+            height: 5px !important;
+            min-height: 5px !important;
+            line-height: 5px !important;
+            color: 'white' !important;
+            padding-bottom: 0px !important;    
+        }
         </style>                          
         """))
 
