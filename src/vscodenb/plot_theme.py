@@ -351,7 +351,6 @@ def set_vscode_theme(mode=None, style='grid', frame=False, cmap=None, figsize=(5
         .widget-dropdown,
         .widget-text,
         .widget-textarea {
-            color: transparent !important;  /* Set to desired color */
             font-size: 10px !important;      /* Font size */
         }
         div.widget-html-content > progress { /* Outer container */
