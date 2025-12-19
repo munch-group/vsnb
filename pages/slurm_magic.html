@@ -108,7 +108,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
-<link rel="stylesheet" href="api/_styles-quartodoc.css">
+<link rel="stylesheet" href="../api/_styles-quartodoc.css">
 <link rel="stylesheet" href="../styles.css">
 </head>
 
@@ -176,7 +176,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div id="9b7d6fa7" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-19T10:43:15.306607Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-19T10:43:15.306268Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-19T10:43:16.561837Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-19T10:43:16.561362Z&quot;}}" data-execution_count="1">
+<div id="9b7d6fa7" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-19T15:09:46.405770Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-19T15:09:46.405203Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-19T15:09:47.465890Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-19T15:09:47.465518Z&quot;}}" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> vscodenb <span class="co"># importing automatically registers the ipython magic</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 
@@ -214,7 +214,7 @@ div.progress-bar { /* Inner bar */
 </div>
 </div>
 <p>The slurm cell magic allows you to run code in a SLURM job directly from a Jupyter notebook. For example:</p>
-<div id="f010bbd6" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-19T10:43:16.563100Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-19T10:43:16.562954Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-19T10:43:16.565351Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-19T10:43:16.564927Z&quot;}}" data-execution_count="2">
+<div id="f010bbd6" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-19T15:09:47.467339Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-19T15:09:47.467193Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-19T15:09:47.469481Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-19T15:09:47.469096Z&quot;}}" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>slurm</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> <span class="st">"Hello from slurm magic!"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -230,7 +230,7 @@ div.progress-bar { /* Inner bar */
 </div>
 </div>
 <p>Specify memory per cpu, number of cpus, wall time, account, etc.</p>
-<div id="ffad0ffe" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-19T10:43:16.566535Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-19T10:43:16.566427Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-19T10:43:16.568662Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-19T10:43:16.568181Z&quot;}}" data-execution_count="3">
+<div id="ffad0ffe" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-19T15:09:47.470852Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-19T15:09:47.470751Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-19T15:09:47.472854Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-19T15:09:47.472483Z&quot;}}" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>slurm <span class="op">-</span>m <span class="dv">8</span><span class="er">G</span> <span class="op">-</span>c <span class="dv">4</span> <span class="op">-</span>t <span class="dv">00</span>:<span class="dv">10</span>:<span class="dv">00</span> <span class="op">-</span>A xy<span class="op">-</span>drive</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> <span class="st">"Hello again from slurm magic!"</span></span>
