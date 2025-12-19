@@ -187,7 +187,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div id="setup" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-19T15:23:57.191842Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-19T15:23:57.191744Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-19T15:23:58.342957Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-19T15:23:58.342449Z&quot;}}" data-execution_count="1">
+<div id="setup" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-19T15:28:39.877660Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-19T15:28:39.877309Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-19T15:28:41.017304Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-19T15:28:41.016891Z&quot;}}" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> vscodenb <span class="co"># importing automatically registers the ipython magic</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> multiprocess <span class="im">as</span> mp</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -234,7 +234,7 @@ div.progress-bar { /* Inner bar */
 <section id="magic-for-cells" class="level2">
 <h2 class="anchored" data-anchor-id="magic-for-cells">Magic: For cells</h2>
 <p>The <code>%%monitor</code> cell magic lets you monitor CPU and memory usage as a cell runs. Just add it at the top of any cell.</p>
-<div id="magic-basic" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-19T15:23:58.344505Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-19T15:23:58.344328Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-19T15:24:03.125678Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-19T15:24:03.123564Z&quot;}}" data-execution_count="2">
+<div id="magic-basic" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-19T15:28:41.018858Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-19T15:28:41.018702Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-19T15:28:45.812266Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-19T15:28:45.810058Z&quot;}}" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>monitor</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>work()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -243,230 +243,230 @@ div.progress-bar { /* Inner bar */
 </div>
 </div>
 <p>Use <code>--persist</code> or <code>-p</code> if you want the widget to persist after cell execution completes. This can be useful as a reminder of CPU/memory used:</p>
-<div id="magic-width" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-19T15:24:03.129150Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-19T15:24:03.128967Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-19T15:24:07.838083Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-19T15:24:07.836354Z&quot;}}" data-execution_count="3">
+<div id="magic-width" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-19T15:28:45.815862Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-19T15:28:45.815631Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-19T15:28:50.483610Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-19T15:28:50.481930Z&quot;}}" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>monitor <span class="op">-</span>p</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>work()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
-<div style="font-family: monospace; font-size: 10px; padding: 10px;"><div style="margin-bottom: 12px;"><div style="margin-bottom: 6px; font-size: 11px;">Francis <span style="font-weight: normal; color: #666;">(40%/41% mem)</span></div><div style="display: flex; gap: 3px; width: 100%; margin-bottom: 3px;">
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 0: 99.8% avg">
-                            <div style="width: 99.77777777777777%; height: 100%; background: #666666;"></div>
+<div style="font-family: monospace; font-size: 10px; padding: 10px;"><div style="margin-bottom: 12px;"><div style="margin-bottom: 6px; font-size: 11px;">Francis <span style="font-weight: normal; color: #666;">(30%/30% mem)</span></div><div style="display: flex; gap: 3px; width: 100%; margin-bottom: 3px;">
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 0: 98.0% avg">
+                            <div style="width: 98.0%; height: 100%; background: #666666;"></div>
                         </div>
                         
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 1: 100.0% avg">
-                            <div style="width: 100.0%; height: 100%; background: #666666;"></div>
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 1: 97.6% avg">
+                            <div style="width: 97.56666666666666%; height: 100%; background: #666666;"></div>
                         </div>
                         
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 2: 99.8% avg">
-                            <div style="width: 99.77777777777777%; height: 100%; background: #666666;"></div>
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 2: 97.8% avg">
+                            <div style="width: 97.82222222222222%; height: 100%; background: #666666;"></div>
                         </div>
                         
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 3: 100.0% avg">
-                            <div style="width: 100.0%; height: 100%; background: #666666;"></div>
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 3: 97.3% avg">
+                            <div style="width: 97.34444444444445%; height: 100%; background: #666666;"></div>
                         </div>
                         
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 4: 98.7% avg">
-                            <div style="width: 98.6888888888889%; height: 100%; background: #666666;"></div>
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 4: 95.8% avg">
+                            <div style="width: 95.80000000000001%; height: 100%; background: #666666;"></div>
                         </div>
                         
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 5: 97.6% avg">
-                            <div style="width: 97.55555555555556%; height: 100%; background: #666666;"></div>
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 5: 95.6% avg">
+                            <div style="width: 95.63333333333334%; height: 100%; background: #666666;"></div>
                         </div>
                         
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 6: 95.4% avg">
-                            <div style="width: 95.42222222222222%; height: 100%; background: #666666;"></div>
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 6: 94.5% avg">
+                            <div style="width: 94.45555555555556%; height: 100%; background: #666666;"></div>
                         </div>
                         
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 7: 94.7% avg">
-                            <div style="width: 94.65555555555555%; height: 100%; background: #666666;"></div>
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 7: 91.6% avg">
+                            <div style="width: 91.55555555555556%; height: 100%; background: #666666;"></div>
                         </div>
                         </div></div></div>
 </div>
 </div>
 <p>Increase update frequency for smoother visualization use four updates per second:</p>
-<div id="magic-fast" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-19T15:24:07.840939Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-19T15:24:07.840763Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-19T15:24:12.513234Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-19T15:24:12.512361Z&quot;}}" data-execution_count="4">
+<div id="magic-fast" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-19T15:28:50.486086Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-19T15:28:50.485915Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-19T15:28:54.965208Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-19T15:28:54.963387Z&quot;}}" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>monitor <span class="op">-</span>p <span class="op">-</span>i <span class="fl">0.25</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>work()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
-<div style="font-family: monospace; font-size: 10px; padding: 10px;"><div style="margin-bottom: 12px;"><div style="margin-bottom: 6px; font-size: 11px;">Francis <span style="font-weight: normal; color: #666;">(41%/41% mem)</span></div><div style="display: flex; gap: 3px; width: 100%; margin-bottom: 3px;">
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 0: 100.0% avg">
-                            <div style="width: 100.0%; height: 100%; background: #666666;"></div>
+<div style="font-family: monospace; font-size: 10px; padding: 10px;"><div style="margin-bottom: 12px;"><div style="margin-bottom: 6px; font-size: 11px;">Francis <span style="font-weight: normal; color: #666;">(30%/30% mem)</span></div><div style="display: flex; gap: 3px; width: 100%; margin-bottom: 3px;">
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 0: 99.1% avg">
+                            <div style="width: 99.07058823529412%; height: 100%; background: #666666;"></div>
                         </div>
                         
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 1: 100.0% avg">
-                            <div style="width: 100.0%; height: 100%; background: #666666;"></div>
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 1: 98.8% avg">
+                            <div style="width: 98.83529411764707%; height: 100%; background: #666666;"></div>
                         </div>
                         
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 2: 100.0% avg">
-                            <div style="width: 100.0%; height: 100%; background: #666666;"></div>
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 2: 99.1% avg">
+                            <div style="width: 99.05882352941177%; height: 100%; background: #666666;"></div>
                         </div>
                         
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 3: 100.0% avg">
-                            <div style="width: 100.0%; height: 100%; background: #666666;"></div>
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 3: 99.1% avg">
+                            <div style="width: 99.08823529411765%; height: 100%; background: #666666;"></div>
                         </div>
                         
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 4: 99.3% avg">
-                            <div style="width: 99.32352941176471%; height: 100%; background: #666666;"></div>
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 4: 97.6% avg">
+                            <div style="width: 97.6470588235294%; height: 100%; background: #666666;"></div>
                         </div>
                         
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 5: 99.1% avg">
-                            <div style="width: 99.09411764705882%; height: 100%; background: #666666;"></div>
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 5: 97.9% avg">
+                            <div style="width: 97.88235294117646%; height: 100%; background: #666666;"></div>
                         </div>
                         
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 6: 98.2% avg">
-                            <div style="width: 98.18235294117646%; height: 100%; background: #666666;"></div>
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 6: 95.4% avg">
+                            <div style="width: 95.39999999999999%; height: 100%; background: #666666;"></div>
                         </div>
                         
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 7: 98.5% avg">
-                            <div style="width: 98.45882352941176%; height: 100%; background: #666666;"></div>
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 7: 94.8% avg">
+                            <div style="width: 94.76470588235294%; height: 100%; background: #666666;"></div>
                         </div>
                         </div></div></div>
 </div>
 </div>
-<div id="d975b840" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-19T15:24:12.514747Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-19T15:24:12.514585Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-19T15:24:17.288473Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-19T15:24:17.287830Z&quot;}}" data-execution_count="5">
+<div id="d975b840" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-19T15:28:54.967596Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-19T15:28:54.967411Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-19T15:28:59.620968Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-19T15:28:59.619426Z&quot;}}" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>monitor <span class="op">-</span>p <span class="op">-</span>c</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>work()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
-<div style="font-family: monospace; font-size: 10px; padding: 10px;"><div style="margin-bottom: 12px;"><div style="margin-bottom: 6px; font-size: 11px;">Francis <span style="font-weight: normal; color: #666;">(40%/41% mem)</span></div><div style="display: flex; gap: 3px; width: 100%; margin-bottom: 3px;">
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 0: 100.0% avg">
-                            <div style="width: 100.0%; height: 100%; background: #4CAF50;"></div>
+<div style="font-family: monospace; font-size: 10px; padding: 10px;"><div style="margin-bottom: 12px;"><div style="margin-bottom: 6px; font-size: 11px;">Francis <span style="font-weight: normal; color: #666;">(31%/31% mem)</span></div><div style="display: flex; gap: 3px; width: 100%; margin-bottom: 3px;">
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 0: 97.8% avg">
+                            <div style="width: 97.77777777777777%; height: 100%; background: #4CAF50;"></div>
                         </div>
                         
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 1: 100.0% avg">
-                            <div style="width: 100.0%; height: 100%; background: #4CAF50;"></div>
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 1: 97.8% avg">
+                            <div style="width: 97.77777777777777%; height: 100%; background: #4CAF50;"></div>
                         </div>
                         
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 2: 100.0% avg">
-                            <div style="width: 100.0%; height: 100%; background: #4CAF50;"></div>
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 2: 97.3% avg">
+                            <div style="width: 97.28888888888889%; height: 100%; background: #4CAF50;"></div>
                         </div>
                         
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 3: 100.0% avg">
-                            <div style="width: 100.0%; height: 100%; background: #4CAF50;"></div>
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 3: 97.4% avg">
+                            <div style="width: 97.38888888888889%; height: 100%; background: #4CAF50;"></div>
                         </div>
                         
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 4: 98.7% avg">
-                            <div style="width: 98.67777777777778%; height: 100%; background: #4CAF50;"></div>
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 4: 97.4% avg">
+                            <div style="width: 97.38888888888889%; height: 100%; background: #4CAF50;"></div>
                         </div>
                         
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 5: 97.6% avg">
-                            <div style="width: 97.55555555555556%; height: 100%; background: #4CAF50;"></div>
-                        </div>
-                        
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 6: 95.9% avg">
-                            <div style="width: 95.85555555555555%; height: 100%; background: #4CAF50;"></div>
-                        </div>
-                        
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 7: 95.6% avg">
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 5: 95.6% avg">
                             <div style="width: 95.64444444444445%; height: 100%; background: #4CAF50;"></div>
+                        </div>
+                        
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 6: 94.9% avg">
+                            <div style="width: 94.86666666666666%; height: 100%; background: #4CAF50;"></div>
+                        </div>
+                        
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 7: 92.2% avg">
+                            <div style="width: 92.22222222222223%; height: 100%; background: #4CAF50;"></div>
                         </div>
                         </div></div></div>
 </div>
 </div>
 <p>Produce summary percentages instead of gauges (overrides <code>-p</code>):</p>
-<div id="c73ae3df" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-19T15:24:17.290122Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-19T15:24:17.289974Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-19T15:24:22.067195Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-19T15:24:22.066441Z&quot;}}" data-execution_count="6">
+<div id="c73ae3df" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-19T15:28:59.623634Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-19T15:28:59.623450Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-19T15:29:04.282296Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-19T15:29:04.280694Z&quot;}}" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>monitor <span class="op">-</span>s</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>work()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
-<div style="font-family: monospace; font-size: 10px; padding: 10px;"><div style="margin-bottom: 12px;"><div style="margin-bottom: 8px; font-size: 11px;">Francis <span style="font-weight: normal; color: #666;">(41%/41% mem)</span></div>
+<div style="font-family: monospace; font-size: 10px; padding: 10px;"><div style="margin-bottom: 12px;"><div style="margin-bottom: 8px; font-size: 11px;">Francis <span style="font-weight: normal; color: #666;">(31%/32% mem)</span></div>
 <table class="caption-top table table-sm table-striped small">
 <tbody>
 <tr class="odd" style="background-color: rgba(128, 128, 128, 0.1);">
 <td style="padding: 4px 8px; font-weight: bold">CPU %</td>
-<td style="text-align: center; padding: 4px 8px;">100</td>
-<td style="text-align: center; padding: 4px 8px;">100</td>
-<td style="text-align: center; padding: 4px 8px;">100</td>
-<td style="text-align: center; padding: 4px 8px;">100</td>
+<td style="text-align: center; padding: 4px 8px;">99</td>
+<td style="text-align: center; padding: 4px 8px;">99</td>
+<td style="text-align: center; padding: 4px 8px;">99</td>
+<td style="text-align: center; padding: 4px 8px;">99</td>
 <td style="text-align: center; padding: 4px 8px;">98</td>
-<td style="text-align: center; padding: 4px 8px;">96</td>
-<td style="text-align: center; padding: 4px 8px;">93</td>
-<td style="text-align: center; padding: 4px 8px;">93</td>
+<td style="text-align: center; padding: 4px 8px;">94</td>
+<td style="text-align: center; padding: 4px 8px;">95</td>
+<td style="text-align: center; padding: 4px 8px;">90</td>
 </tr>
 </tbody>
 </table>
-<div style="margin-top: 6px; font-size: 11px;">Total CPU time: <span style="font-weight: normal; color: #666;">31.51 s</span></div></div></div>
+<div style="margin-top: 6px; font-size: 11px;">Total CPU time: <span style="font-weight: normal; color: #666;">31.19 s</span></div></div></div>
 </div>
 </div>
 <p>Widget fills width of cell by default. To limit width, use -w option:</p>
-<div id="527c70df" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-19T15:24:22.068817Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-19T15:24:22.068676Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-19T15:24:26.920879Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-19T15:24:26.918529Z&quot;}}" data-execution_count="7">
+<div id="527c70df" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-19T15:29:04.284536Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-19T15:29:04.284371Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-19T15:29:08.943914Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-19T15:29:08.942434Z&quot;}}" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>monitor <span class="op">-</span>p <span class="op">-</span>w <span class="dv">100</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>work()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
-<div style="font-family: monospace; font-size: 10px; padding: 10px; max-width: 100ch;"><div style="margin-bottom: 12px;"><div style="margin-bottom: 6px; font-size: 11px;">Francis <span style="font-weight: normal; color: #666;">(40%/41% mem)</span></div><div style="display: flex; gap: 3px; width: 100%; margin-bottom: 3px;">
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 0: 100.0% avg">
-                            <div style="width: 100.0%; height: 100%; background: #666666;"></div>
+<div style="font-family: monospace; font-size: 10px; padding: 10px; max-width: 100ch;"><div style="margin-bottom: 12px;"><div style="margin-bottom: 6px; font-size: 11px;">Francis <span style="font-weight: normal; color: #666;">(32%/32% mem)</span></div><div style="display: flex; gap: 3px; width: 100%; margin-bottom: 3px;">
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 0: 97.8% avg">
+                            <div style="width: 97.82222222222222%; height: 100%; background: #666666;"></div>
                         </div>
                         
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 1: 100.0% avg">
-                            <div style="width: 100.0%; height: 100%; background: #666666;"></div>
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 1: 97.8% avg">
+                            <div style="width: 97.82222222222222%; height: 100%; background: #666666;"></div>
                         </div>
                         
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 2: 100.0% avg">
-                            <div style="width: 100.0%; height: 100%; background: #666666;"></div>
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 2: 97.1% avg">
+                            <div style="width: 97.11111111111111%; height: 100%; background: #666666;"></div>
                         </div>
                         
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 3: 100.0% avg">
-                            <div style="width: 100.0%; height: 100%; background: #666666;"></div>
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 3: 96.7% avg">
+                            <div style="width: 96.66666666666667%; height: 100%; background: #666666;"></div>
                         </div>
                         
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 4: 98.2% avg">
-                            <div style="width: 98.22222222222223%; height: 100%; background: #666666;"></div>
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 4: 99.1% avg">
+                            <div style="width: 99.13333333333334%; height: 100%; background: #666666;"></div>
                         </div>
                         
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 5: 96.4% avg">
-                            <div style="width: 96.44444444444444%; height: 100%; background: #666666;"></div>
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 5: 90.0% avg">
+                            <div style="width: 90.0%; height: 100%; background: #666666;"></div>
                         </div>
                         
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 6: 94.6% avg">
-                            <div style="width: 94.55555555555556%; height: 100%; background: #666666;"></div>
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 6: 88.9% avg">
+                            <div style="width: 88.9%; height: 100%; background: #666666;"></div>
                         </div>
                         
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 7: 93.9% avg">
-                            <div style="width: 93.9%; height: 100%; background: #666666;"></div>
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 7: 90.4% avg">
+                            <div style="width: 90.41111111111111%; height: 100%; background: #666666;"></div>
                         </div>
                         </div></div></div>
 </div>
 </div>
 <p>You can also override the automatic computation of CPU gauges per line:</p>
-<div id="11f6b7cb" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-19T15:24:26.923462Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-19T15:24:26.923291Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-19T15:24:31.714272Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-19T15:24:31.713604Z&quot;}}" data-execution_count="8">
+<div id="11f6b7cb" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-19T15:29:08.946783Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-19T15:29:08.946607Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-19T15:29:13.227156Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-19T15:29:13.226610Z&quot;}}" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>monitor <span class="op">-</span>p <span class="op">-</span>f <span class="dv">4</span> <span class="op">-</span>w <span class="dv">50</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>work()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
-<div style="font-family: monospace; font-size: 10px; padding: 10px; max-width: 50ch;"><div style="margin-bottom: 12px;"><div style="margin-bottom: 6px; font-size: 11px;">Francis <span style="font-weight: normal; color: #666;">(40%/41% mem)</span></div><div style="display: flex; gap: 3px; width: 100%; margin-bottom: 3px;">
-                        <div style="width: calc((100% - 9px) / 4); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 0: 100.0% avg">
-                            <div style="width: 100.0%; height: 100%; background: #666666;"></div>
+<div style="font-family: monospace; font-size: 10px; padding: 10px; max-width: 50ch;"><div style="margin-bottom: 12px;"><div style="margin-bottom: 6px; font-size: 11px;">Francis <span style="font-weight: normal; color: #666;">(32%/32% mem)</span></div><div style="display: flex; gap: 3px; width: 100%; margin-bottom: 3px;">
+                        <div style="width: calc((100% - 9px) / 4); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 0: 99.2% avg">
+                            <div style="width: 99.25%; height: 100%; background: #666666;"></div>
                         </div>
                         
-                        <div style="width: calc((100% - 9px) / 4); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 1: 100.0% avg">
-                            <div style="width: 100.0%; height: 100%; background: #666666;"></div>
+                        <div style="width: calc((100% - 9px) / 4); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 1: 99.3% avg">
+                            <div style="width: 99.275%; height: 100%; background: #666666;"></div>
                         </div>
                         
-                        <div style="width: calc((100% - 9px) / 4); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 2: 100.0% avg">
-                            <div style="width: 100.0%; height: 100%; background: #666666;"></div>
+                        <div style="width: calc((100% - 9px) / 4); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 2: 99.3% avg">
+                            <div style="width: 99.2625%; height: 100%; background: #666666;"></div>
                         </div>
                         
-                        <div style="width: calc((100% - 9px) / 4); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 3: 100.0% avg">
-                            <div style="width: 100.0%; height: 100%; background: #666666;"></div>
+                        <div style="width: calc((100% - 9px) / 4); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 3: 98.8% avg">
+                            <div style="width: 98.75%; height: 100%; background: #666666;"></div>
                         </div>
                         </div><div style="display: flex; gap: 3px; width: 100%; margin-bottom: 3px;">
-                        <div style="width: calc((100% - 9px) / 4); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 4: 98.7% avg">
-                            <div style="width: 98.6888888888889%; height: 100%; background: #666666;"></div>
+                        <div style="width: calc((100% - 9px) / 4); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 4: 100.0% avg">
+                            <div style="width: 100.0%; height: 100%; background: #666666;"></div>
                         </div>
                         
-                        <div style="width: calc((100% - 9px) / 4); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 5: 95.6% avg">
-                            <div style="width: 95.55555555555556%; height: 100%; background: #666666;"></div>
+                        <div style="width: calc((100% - 9px) / 4); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 5: 99.0% avg">
+                            <div style="width: 99.0%; height: 100%; background: #666666;"></div>
                         </div>
                         
-                        <div style="width: calc((100% - 9px) / 4); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 6: 92.0% avg">
-                            <div style="width: 92.0%; height: 100%; background: #666666;"></div>
+                        <div style="width: calc((100% - 9px) / 4); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 6: 99.5% avg">
+                            <div style="width: 99.5%; height: 100%; background: #666666;"></div>
                         </div>
                         
-                        <div style="width: calc((100% - 9px) / 4); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 7: 91.5% avg">
-                            <div style="width: 91.5%; height: 100%; background: #666666;"></div>
+                        <div style="width: calc((100% - 9px) / 4); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 7: 98.2% avg">
+                            <div style="width: 98.25%; height: 100%; background: #666666;"></div>
                         </div>
                         </div></div></div>
 </div>
@@ -477,91 +477,91 @@ div.progress-bar { /* Inner bar */
 <p>The context manager gives you explicit control over monitoring. Perfect for Python scripts or when you want programmatic control.</p>
 <section id="basic-context-manager" class="level3">
 <h3 class="anchored" data-anchor-id="basic-context-manager">Basic Context Manager</h3>
-<div id="context-basic" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-19T15:24:31.715997Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-19T15:24:31.715841Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-19T15:24:36.474676Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-19T15:24:36.473019Z&quot;}}" data-execution_count="9">
+<div id="context-basic" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-19T15:29:13.229130Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-19T15:29:13.228973Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-19T15:29:17.898363Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-19T15:29:17.897024Z&quot;}}" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> vscodenb <span class="im">import</span> CPUMonitor</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> CPUMonitor(label<span class="op">=</span><span class="st">"Computation Phase"</span>, persist<span class="op">=</span><span class="va">True</span>, color<span class="op">=</span><span class="va">True</span>):</span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    work()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
-<div style="font-family: monospace; font-size: 10px; padding: 10px;"><div style="margin-bottom: 8px; font-weight: bold; font-size: 12px;">Computation Phase</div><div style="margin-bottom: 12px;"><div style="margin-bottom: 6px; font-size: 11px;">Francis <span style="font-weight: normal; color: #666;">(40%/40% mem)</span></div><div style="display: flex; gap: 3px; width: 100%; margin-bottom: 3px;">
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 0: 100.0% avg">
-                            <div style="width: 100.0%; height: 100%; background: #4CAF50;"></div>
+<div style="font-family: monospace; font-size: 10px; padding: 10px;"><div style="margin-bottom: 8px; font-weight: bold; font-size: 12px;">Computation Phase</div><div style="margin-bottom: 12px;"><div style="margin-bottom: 6px; font-size: 11px;">Francis <span style="font-weight: normal; color: #666;">(32%/32% mem)</span></div><div style="display: flex; gap: 3px; width: 100%; margin-bottom: 3px;">
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 0: 94.8% avg">
+                            <div style="width: 94.80000000000001%; height: 100%; background: #4CAF50;"></div>
                         </div>
                         
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 1: 100.0% avg">
-                            <div style="width: 100.0%; height: 100%; background: #4CAF50;"></div>
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 1: 93.5% avg">
+                            <div style="width: 93.46666666666667%; height: 100%; background: #4CAF50;"></div>
                         </div>
                         
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 2: 100.0% avg">
-                            <div style="width: 100.0%; height: 100%; background: #4CAF50;"></div>
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 2: 91.5% avg">
+                            <div style="width: 91.48888888888888%; height: 100%; background: #4CAF50;"></div>
                         </div>
                         
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 3: 100.0% avg">
-                            <div style="width: 100.0%; height: 100%; background: #4CAF50;"></div>
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 3: 90.5% avg">
+                            <div style="width: 90.45555555555556%; height: 100%; background: #4CAF50;"></div>
                         </div>
                         
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 4: 98.7% avg">
-                            <div style="width: 98.6888888888889%; height: 100%; background: #4CAF50;"></div>
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 4: 96.7% avg">
+                            <div style="width: 96.66666666666667%; height: 100%; background: #4CAF50;"></div>
                         </div>
                         
                         <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 5: 93.7% avg">
-                            <div style="width: 93.67777777777778%; height: 100%; background: #4CAF50;"></div>
+                            <div style="width: 93.65555555555555%; height: 100%; background: #4CAF50;"></div>
                         </div>
                         
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 6: 91.8% avg">
-                            <div style="width: 91.80000000000001%; height: 100%; background: #4CAF50;"></div>
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 6: 94.6% avg">
+                            <div style="width: 94.55555555555556%; height: 100%; background: #4CAF50;"></div>
                         </div>
                         
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 7: 91.8% avg">
-                            <div style="width: 91.77777777777777%; height: 100%; background: #4CAF50;"></div>
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 7: 89.7% avg">
+                            <div style="width: 89.73333333333333%; height: 100%; background: #4CAF50;"></div>
                         </div>
                         </div></div></div>
 </div>
 </div>
 <p>All arguments to the <code>monitor</code> magic can also be passed to <code>CPUMonitor</code>:</p>
-<div id="context-config" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-19T15:24:36.477206Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-19T15:24:36.477025Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-19T15:24:45.928414Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-19T15:24:45.926927Z&quot;}}" data-execution_count="10">
+<div id="context-config" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-19T15:29:17.900916Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-19T15:29:17.900746Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-19T15:29:27.489996Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-19T15:29:27.488265Z&quot;}}" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> CPUMonitor(summary<span class="op">=</span><span class="va">True</span>, label<span class="op">=</span><span class="st">"First computation"</span>):</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    work()</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> CPUMonitor(summary<span class="op">=</span><span class="va">True</span>, label<span class="op">=</span><span class="st">"Second computation"</span>):</span>
 <span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    work()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
-<div style="font-family: monospace; font-size: 10px; padding: 10px;"><div style="margin-bottom: 8px; font-weight: bold; font-size: 12px;">First computation</div><div style="margin-bottom: 12px;"><div style="margin-bottom: 8px; font-size: 11px;">Francis <span style="font-weight: normal; color: #666;">(41%/41% mem)</span></div>
+<div style="font-family: monospace; font-size: 10px; padding: 10px;"><div style="margin-bottom: 8px; font-weight: bold; font-size: 12px;">First computation</div><div style="margin-bottom: 12px;"><div style="margin-bottom: 8px; font-size: 11px;">Francis <span style="font-weight: normal; color: #666;">(32%/32% mem)</span></div>
 <table class="caption-top table table-sm table-striped small">
 <tbody>
 <tr class="odd" style="background-color: rgba(128, 128, 128, 0.1);">
 <td style="padding: 4px 8px; font-weight: bold">CPU %</td>
-<td style="text-align: center; padding: 4px 8px;">100</td>
-<td style="text-align: center; padding: 4px 8px;">100</td>
-<td style="text-align: center; padding: 4px 8px;">100</td>
-<td style="text-align: center; padding: 4px 8px;">100</td>
-<td style="text-align: center; padding: 4px 8px;">99</td>
-<td style="text-align: center; padding: 4px 8px;">97</td>
-<td style="text-align: center; padding: 4px 8px;">95</td>
-<td style="text-align: center; padding: 4px 8px;">95</td>
-</tr>
-</tbody>
-</table>
-<div style="margin-top: 6px; font-size: 11px;">Total CPU time: <span style="font-weight: normal; color: #666;">31.69 s</span></div></div></div>
-</div>
-<div class="cell-output cell-output-display">
-<div style="font-family: monospace; font-size: 10px; padding: 10px;"><div style="margin-bottom: 8px; font-weight: bold; font-size: 12px;">Second computation</div><div style="margin-bottom: 12px;"><div style="margin-bottom: 8px; font-size: 11px;">Francis <span style="font-weight: normal; color: #666;">(40%/41% mem)</span></div>
-<table class="caption-top table table-sm table-striped small">
-<tbody>
-<tr class="odd" style="background-color: rgba(128, 128, 128, 0.1);">
-<td style="padding: 4px 8px; font-weight: bold">CPU %</td>
-<td style="text-align: center; padding: 4px 8px;">100</td>
-<td style="text-align: center; padding: 4px 8px;">100</td>
-<td style="text-align: center; padding: 4px 8px;">100</td>
-<td style="text-align: center; padding: 4px 8px;">100</td>
-<td style="text-align: center; padding: 4px 8px;">98</td>
+<td style="text-align: center; padding: 4px 8px;">96</td>
 <td style="text-align: center; padding: 4px 8px;">96</td>
 <td style="text-align: center; padding: 4px 8px;">95</td>
-<td style="text-align: center; padding: 4px 8px;">92</td>
+<td style="text-align: center; padding: 4px 8px;">95</td>
+<td style="text-align: center; padding: 4px 8px;">97</td>
+<td style="text-align: center; padding: 4px 8px;">96</td>
+<td style="text-align: center; padding: 4px 8px;">95</td>
+<td style="text-align: center; padding: 4px 8px;">95</td>
 </tr>
 </tbody>
 </table>
-<div style="margin-top: 6px; font-size: 11px;">Total CPU time: <span style="font-weight: normal; color: #666;">31.48 s</span></div></div></div>
+<div style="margin-top: 6px; font-size: 11px;">Total CPU time: <span style="font-weight: normal; color: #666;">30.92 s</span></div></div></div>
+</div>
+<div class="cell-output cell-output-display">
+<div style="font-family: monospace; font-size: 10px; padding: 10px;"><div style="margin-bottom: 8px; font-weight: bold; font-size: 12px;">Second computation</div><div style="margin-bottom: 12px;"><div style="margin-bottom: 8px; font-size: 11px;">Francis <span style="font-weight: normal; color: #666;">(33%/33% mem)</span></div>
+<table class="caption-top table table-sm table-striped small">
+<tbody>
+<tr class="odd" style="background-color: rgba(128, 128, 128, 0.1);">
+<td style="padding: 4px 8px; font-weight: bold">CPU %</td>
+<td style="text-align: center; padding: 4px 8px;">98</td>
+<td style="text-align: center; padding: 4px 8px;">97</td>
+<td style="text-align: center; padding: 4px 8px;">96</td>
+<td style="text-align: center; padding: 4px 8px;">96</td>
+<td style="text-align: center; padding: 4px 8px;">96</td>
+<td style="text-align: center; padding: 4px 8px;">96</td>
+<td style="text-align: center; padding: 4px 8px;">95</td>
+<td style="text-align: center; padding: 4px 8px;">95</td>
+</tr>
+</tbody>
+</table>
+<div style="margin-top: 6px; font-size: 11px;">Total CPU time: <span style="font-weight: normal; color: #666;">31.12 s</span></div></div></div>
 </div>
 </div>
 </section>
@@ -569,7 +569,7 @@ div.progress-bar { /* Inner bar */
 <section id="decorator-for-functions" class="level2">
 <h2 class="anchored" data-anchor-id="decorator-for-functions">Decorator: For functions</h2>
 <p>Wrap any function with <code>@monitor</code> to automatically monitor its execution. The decorator takes the same arguments as the magic and the context manager, but here the label defaults to the function name.</p>
-<div id="262b8b65" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-19T15:24:45.930340Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-19T15:24:45.930173Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-19T15:24:45.932597Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-19T15:24:45.932126Z&quot;}}" data-execution_count="11">
+<div id="262b8b65" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-19T15:29:27.492742Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-19T15:29:27.492558Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-19T15:29:27.495150Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-19T15:29:27.494604Z&quot;}}" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> vscodenb <span class="im">import</span> monitor</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="at">@monitor</span></span>
@@ -581,7 +581,7 @@ div.progress-bar { /* Inner bar */
 <span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    work()      </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>That lets you track CPU usage for your code in real time:</p>
-<div id="1fc59f5f" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-19T15:24:45.934089Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-19T15:24:45.933983Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-19T15:25:04.777089Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-19T15:25:04.775254Z&quot;}}" data-execution_count="12">
+<div id="1fc59f5f" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-19T15:29:27.496690Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-19T15:29:27.496564Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-19T15:29:46.249001Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-19T15:29:46.244822Z&quot;}}" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>):</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    some_function()</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>other_function()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -598,7 +598,7 @@ div.progress-bar { /* Inner bar */
 
 </div>
 </div>
-<div id="639cbd9f" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-19T15:25:04.779845Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-19T15:25:04.779669Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-19T15:25:20.269538Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-19T15:25:20.267766Z&quot;}}" data-execution_count="13">
+<div id="639cbd9f" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-19T15:29:46.251019Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-19T15:29:46.250851Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-19T15:30:00.859199Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-19T15:30:00.857601Z&quot;}}" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="at">@monitor</span>(persist<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> some_function():</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    work()</span>
@@ -606,113 +606,113 @@ div.progress-bar { /* Inner bar */
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>):</span>
 <span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    some_function()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
-<div style="font-family: monospace; font-size: 10px; padding: 10px;"><div style="margin-bottom: 8px; font-weight: bold; font-size: 12px;">some_function</div><div style="margin-bottom: 12px;"><div style="margin-bottom: 6px; font-size: 11px;">Francis <span style="font-weight: normal; color: #666;">(41%/41% mem)</span></div><div style="display: flex; gap: 3px; width: 100%; margin-bottom: 3px;">
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 0: 100.0% avg">
-                            <div style="width: 100.0%; height: 100%; background: #666666;"></div>
+<div style="font-family: monospace; font-size: 10px; padding: 10px;"><div style="margin-bottom: 8px; font-weight: bold; font-size: 12px;">some_function</div><div style="margin-bottom: 12px;"><div style="margin-bottom: 6px; font-size: 11px;">Francis <span style="font-weight: normal; color: #666;">(33%/33% mem)</span></div><div style="display: flex; gap: 3px; width: 100%; margin-bottom: 3px;">
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 0: 96.9% avg">
+                            <div style="width: 96.88888888888889%; height: 100%; background: #666666;"></div>
                         </div>
                         
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 1: 100.0% avg">
-                            <div style="width: 100.0%; height: 100%; background: #666666;"></div>
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 1: 95.8% avg">
+                            <div style="width: 95.77777777777777%; height: 100%; background: #666666;"></div>
                         </div>
                         
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 2: 100.0% avg">
-                            <div style="width: 100.0%; height: 100%; background: #666666;"></div>
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 2: 95.1% avg">
+                            <div style="width: 95.11111111111111%; height: 100%; background: #666666;"></div>
                         </div>
                         
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 3: 100.0% avg">
-                            <div style="width: 100.0%; height: 100%; background: #666666;"></div>
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 3: 94.9% avg">
+                            <div style="width: 94.88888888888889%; height: 100%; background: #666666;"></div>
                         </div>
                         
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 4: 99.0% avg">
-                            <div style="width: 98.9909090909091%; height: 100%; background: #666666;"></div>
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 4: 96.7% avg">
+                            <div style="width: 96.73333333333333%; height: 100%; background: #666666;"></div>
                         </div>
                         
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 5: 98.3% avg">
-                            <div style="width: 98.31818181818181%; height: 100%; background: #666666;"></div>
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 5: 96.2% avg">
+                            <div style="width: 96.15555555555555%; height: 100%; background: #666666;"></div>
                         </div>
                         
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 6: 96.6% avg">
-                            <div style="width: 96.63636363636364%; height: 100%; background: #666666;"></div>
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 6: 95.0% avg">
+                            <div style="width: 94.98888888888888%; height: 100%; background: #666666;"></div>
                         </div>
                         
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 7: 96.1% avg">
-                            <div style="width: 96.12727272727274%; height: 100%; background: #666666;"></div>
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 7: 91.7% avg">
+                            <div style="width: 91.72222222222223%; height: 100%; background: #666666;"></div>
                         </div>
                         </div></div></div>
 </div>
 <div class="cell-output cell-output-display">
-<div style="font-family: monospace; font-size: 10px; padding: 10px;"><div style="margin-bottom: 8px; font-weight: bold; font-size: 12px;">some_function</div><div style="margin-bottom: 12px;"><div style="margin-bottom: 6px; font-size: 11px;">Francis <span style="font-weight: normal; color: #666;">(41%/41% mem)</span></div><div style="display: flex; gap: 3px; width: 100%; margin-bottom: 3px;">
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 0: 100.0% avg">
-                            <div style="width: 100.0%; height: 100%; background: #666666;"></div>
+<div style="font-family: monospace; font-size: 10px; padding: 10px;"><div style="margin-bottom: 8px; font-weight: bold; font-size: 12px;">some_function</div><div style="margin-bottom: 12px;"><div style="margin-bottom: 6px; font-size: 11px;">Francis <span style="font-weight: normal; color: #666;">(32%/33% mem)</span></div><div style="display: flex; gap: 3px; width: 100%; margin-bottom: 3px;">
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 0: 99.0% avg">
+                            <div style="width: 99.02000000000001%; height: 100%; background: #666666;"></div>
                         </div>
                         
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 1: 100.0% avg">
-                            <div style="width: 100.0%; height: 100%; background: #666666;"></div>
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 1: 99.0% avg">
+                            <div style="width: 99.0%; height: 100%; background: #666666;"></div>
                         </div>
                         
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 2: 100.0% avg">
-                            <div style="width: 100.0%; height: 100%; background: #666666;"></div>
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 2: 99.0% avg">
+                            <div style="width: 99.0%; height: 100%; background: #666666;"></div>
                         </div>
                         
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 3: 100.0% avg">
-                            <div style="width: 100.0%; height: 100%; background: #666666;"></div>
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 3: 99.0% avg">
+                            <div style="width: 99.0%; height: 100%; background: #666666;"></div>
                         </div>
                         
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 4: 99.3% avg">
-                            <div style="width: 99.34444444444445%; height: 100%; background: #666666;"></div>
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 4: 96.1% avg">
+                            <div style="width: 96.07000000000001%; height: 100%; background: #666666;"></div>
                         </div>
                         
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 5: 99.1% avg">
-                            <div style="width: 99.12222222222222%; height: 100%; background: #666666;"></div>
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 5: 97.0% avg">
+                            <div style="width: 97.01%; height: 100%; background: #666666;"></div>
                         </div>
                         
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 6: 98.7% avg">
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 6: 93.9% avg">
+                            <div style="width: 93.92%; height: 100%; background: #666666;"></div>
+                        </div>
+                        
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 7: 92.2% avg">
+                            <div style="width: 92.16%; height: 100%; background: #666666;"></div>
+                        </div>
+                        </div></div></div>
+</div>
+<div class="cell-output cell-output-display">
+<div style="font-family: monospace; font-size: 10px; padding: 10px;"><div style="margin-bottom: 8px; font-weight: bold; font-size: 12px;">some_function</div><div style="margin-bottom: 12px;"><div style="margin-bottom: 6px; font-size: 11px;">Francis <span style="font-weight: normal; color: #666;">(33%/33% mem)</span></div><div style="display: flex; gap: 3px; width: 100%; margin-bottom: 3px;">
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 0: 98.7% avg">
                             <div style="width: 98.66666666666667%; height: 100%; background: #666666;"></div>
                         </div>
                         
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 7: 98.5% avg">
-                            <div style="width: 98.46666666666667%; height: 100%; background: #666666;"></div>
-                        </div>
-                        </div></div></div>
-</div>
-<div class="cell-output cell-output-display">
-<div style="font-family: monospace; font-size: 10px; padding: 10px;"><div style="margin-bottom: 8px; font-weight: bold; font-size: 12px;">some_function</div><div style="margin-bottom: 12px;"><div style="margin-bottom: 6px; font-size: 11px;">Francis <span style="font-weight: normal; color: #666;">(41%/42% mem)</span></div><div style="display: flex; gap: 3px; width: 100%; margin-bottom: 3px;">
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 0: 100.0% avg">
-                            <div style="width: 100.0%; height: 100%; background: #666666;"></div>
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 1: 98.9% avg">
+                            <div style="width: 98.91111111111111%; height: 100%; background: #666666;"></div>
                         </div>
                         
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 1: 100.0% avg">
-                            <div style="width: 100.0%; height: 100%; background: #666666;"></div>
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 2: 98.7% avg">
+                            <div style="width: 98.66666666666667%; height: 100%; background: #666666;"></div>
                         </div>
                         
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 2: 100.0% avg">
-                            <div style="width: 100.0%; height: 100%; background: #666666;"></div>
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 3: 99.1% avg">
+                            <div style="width: 99.08888888888889%; height: 100%; background: #666666;"></div>
                         </div>
                         
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 3: 100.0% avg">
-                            <div style="width: 100.0%; height: 100%; background: #666666;"></div>
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 4: 96.0% avg">
+                            <div style="width: 96.0%; height: 100%; background: #666666;"></div>
                         </div>
                         
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 4: 99.3% avg">
-                            <div style="width: 99.33333333333333%; height: 100%; background: #666666;"></div>
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 5: 93.9% avg">
+                            <div style="width: 93.9%; height: 100%; background: #666666;"></div>
                         </div>
                         
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 5: 98.4% avg">
-                            <div style="width: 98.44444444444444%; height: 100%; background: #666666;"></div>
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 6: 93.8% avg">
+                            <div style="width: 93.80000000000001%; height: 100%; background: #666666;"></div>
                         </div>
                         
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 6: 96.3% avg">
-                            <div style="width: 96.30000000000001%; height: 100%; background: #666666;"></div>
-                        </div>
-                        
-                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 7: 95.8% avg">
-                            <div style="width: 95.77777777777777%; height: 100%; background: #666666;"></div>
+                        <div style="width: calc((100% - 21px) / 8); min-width: 20px; height: 8px; background: rgba(128, 128, 128, 0.2); border-radius: 2px; overflow: hidden;" title="CPU 7: 95.6% avg">
+                            <div style="width: 95.64444444444445%; height: 100%; background: #666666;"></div>
                         </div>
                         </div></div></div>
 </div>
 </div>
 <p>Or profile them using <code>summary=True</code>:</p>
-<div id="f557afb1" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-19T15:25:20.272098Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-19T15:25:20.271915Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-19T15:25:20.274550Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-19T15:25:20.273933Z&quot;}}" data-execution_count="14">
+<div id="f557afb1" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-19T15:30:00.862276Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-19T15:30:00.862071Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-19T15:30:00.864434Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-19T15:30:00.864007Z&quot;}}" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="at">@monitor</span>(summary<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> some_function():</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    work()</span>
@@ -721,46 +721,46 @@ div.progress-bar { /* Inner bar */
 <span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> other_function():</span>
 <span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    work()     </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="f50312c7" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-19T15:25:20.276073Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-19T15:25:20.275952Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-19T15:25:29.756987Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-19T15:25:29.756335Z&quot;}}" data-execution_count="15">
+<div id="f50312c7" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-19T15:30:00.865820Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-19T15:30:00.865707Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-19T15:30:10.646723Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-19T15:30:10.645323Z&quot;}}" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>some_function()   </span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>other_function() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
-<div style="font-family: monospace; font-size: 10px; padding: 10px;"><div style="margin-bottom: 8px; font-weight: bold; font-size: 12px;">some_function</div><div style="margin-bottom: 12px;"><div style="margin-bottom: 8px; font-size: 11px;">Francis <span style="font-weight: normal; color: #666;">(41%/41% mem)</span></div>
+<div style="font-family: monospace; font-size: 10px; padding: 10px;"><div style="margin-bottom: 8px; font-weight: bold; font-size: 12px;">some_function</div><div style="margin-bottom: 12px;"><div style="margin-bottom: 8px; font-size: 11px;">Francis <span style="font-weight: normal; color: #666;">(32%/33% mem)</span></div>
 <table class="caption-top table table-sm table-striped small">
 <tbody>
 <tr class="odd" style="background-color: rgba(128, 128, 128, 0.1);">
 <td style="padding: 4px 8px; font-weight: bold">CPU %</td>
-<td style="text-align: center; padding: 4px 8px;">100</td>
-<td style="text-align: center; padding: 4px 8px;">100</td>
-<td style="text-align: center; padding: 4px 8px;">100</td>
-<td style="text-align: center; padding: 4px 8px;">100</td>
 <td style="text-align: center; padding: 4px 8px;">98</td>
-<td style="text-align: center; padding: 4px 8px;">95</td>
-<td style="text-align: center; padding: 4px 8px;">94</td>
-<td style="text-align: center; padding: 4px 8px;">92</td>
+<td style="text-align: center; padding: 4px 8px;">98</td>
+<td style="text-align: center; padding: 4px 8px;">98</td>
+<td style="text-align: center; padding: 4px 8px;">98</td>
+<td style="text-align: center; padding: 4px 8px;">99</td>
+<td style="text-align: center; padding: 4px 8px;">98</td>
+<td style="text-align: center; padding: 4px 8px;">97</td>
+<td style="text-align: center; padding: 4px 8px;">96</td>
 </tr>
 </tbody>
 </table>
-<div style="margin-top: 6px; font-size: 11px;">Total CPU time: <span style="font-weight: normal; color: #666;">31.53 s</span></div></div></div>
+<div style="margin-top: 6px; font-size: 11px;">Total CPU time: <span style="font-weight: normal; color: #666;">31.72 s</span></div></div></div>
 </div>
 <div class="cell-output cell-output-display">
-<div style="font-family: monospace; font-size: 10px; padding: 10px;"><div style="margin-bottom: 8px; font-weight: bold; font-size: 12px;">other_function</div><div style="margin-bottom: 12px;"><div style="margin-bottom: 8px; font-size: 11px;">Francis <span style="font-weight: normal; color: #666;">(41%/41% mem)</span></div>
+<div style="font-family: monospace; font-size: 10px; padding: 10px;"><div style="margin-bottom: 8px; font-weight: bold; font-size: 12px;">other_function</div><div style="margin-bottom: 12px;"><div style="margin-bottom: 8px; font-size: 11px;">Francis <span style="font-weight: normal; color: #666;">(32%/33% mem)</span></div>
 <table class="caption-top table table-sm table-striped small">
 <tbody>
 <tr class="odd" style="background-color: rgba(128, 128, 128, 0.1);">
 <td style="padding: 4px 8px; font-weight: bold">CPU %</td>
-<td style="text-align: center; padding: 4px 8px;">100</td>
-<td style="text-align: center; padding: 4px 8px;">100</td>
-<td style="text-align: center; padding: 4px 8px;">100</td>
-<td style="text-align: center; padding: 4px 8px;">100</td>
-<td style="text-align: center; padding: 4px 8px;">100</td>
-<td style="text-align: center; padding: 4px 8px;">99</td>
-<td style="text-align: center; padding: 4px 8px;">99</td>
 <td style="text-align: center; padding: 4px 8px;">98</td>
+<td style="text-align: center; padding: 4px 8px;">98</td>
+<td style="text-align: center; padding: 4px 8px;">97</td>
+<td style="text-align: center; padding: 4px 8px;">97</td>
+<td style="text-align: center; padding: 4px 8px;">95</td>
+<td style="text-align: center; padding: 4px 8px;">98</td>
+<td style="text-align: center; padding: 4px 8px;">98</td>
+<td style="text-align: center; padding: 4px 8px;">95</td>
 </tr>
 </tbody>
 </table>
-<div style="margin-top: 6px; font-size: 11px;">Total CPU time: <span style="font-weight: normal; color: #666;">32.07 s</span></div></div></div>
+<div style="margin-top: 6px; font-size: 11px;">Total CPU time: <span style="font-weight: normal; color: #666;">31.25 s</span></div></div></div>
 </div>
 </div>
 
