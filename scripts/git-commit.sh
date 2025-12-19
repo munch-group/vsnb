@@ -104,8 +104,6 @@ else
   git commit "$@"
 fi
 
-git status
-
 read -p "${YELLOW}Push commits? ${RESET}[Y/n] " choice
 case "$choice" in
   n|N) git status ;;
