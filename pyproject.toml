@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "vscodenb"
-version = "0.1.21"
+version = "0.1.22"
 description = "Utilities and styling for notebooks in vscode"
 authors = [
     {name = "Kasper Munch", email = "kaspermunch@birc.au.dk"}
