@@ -1,0 +1,41 @@
+# lighten_colors { #vscodenb.lighten_colors }
+
+```python
+vscodenb.lighten_colors(
+    colors,
+    factor=0.0,
+    n_colors=None,
+    as_cmap=None,
+    target_lightness=None,
+)
+```
+
+Lighten a colormap or palette using HSL color space.
+
+## Parameters {.doc-section .doc-section-parameters}
+
+<code>[**colors**]{.parameter-name} [:]{.parameter-annotation-sep} [str, Colormap, or list]{.parameter-annotation}</code>
+
+:   Matplotlib colormap, seaborn palette name, or list of colors
+
+<code>[**factor**]{.parameter-name} [:]{.parameter-annotation-sep} [[float](`float`)]{.parameter-annotation} [ = ]{.parameter-default-sep} [0.0]{.parameter-default}</code>
+
+:   Blend factor toward white (0 = original, 1 = white). Ignored if target_lightness is set.
+
+<code>[**n_colors**]{.parameter-name} [:]{.parameter-annotation-sep} [[int](`int`)]{.parameter-annotation} [ = ]{.parameter-default-sep} [None]{.parameter-default}</code>
+
+:   Number of colors for discrete palettes
+
+<code>[**as_cmap**]{.parameter-name} [:]{.parameter-annotation-sep} [[bool](`bool`)]{.parameter-annotation} [ = ]{.parameter-default-sep} [None]{.parameter-default}</code>
+
+:   Force output type. If None, auto-detects based on input.
+
+<code>[**target_lightness**]{.parameter-name} [:]{.parameter-annotation-sep} [[float](`float`)]{.parameter-annotation} [ = ]{.parameter-default-sep} [None]{.parameter-default}</code>
+
+:   If set (0-1), all colors will be adjusted to this lightness value, preserving hue and saturation.
+
+## Returns {.doc-section .doc-section-returns}
+
+<code>[]{.parameter-name} [:]{.parameter-annotation-sep} [[list](`list`) or [LinearSegmentedColormap](`LinearSegmentedColormap`)]{.parameter-annotation}</code>
+
+:   
