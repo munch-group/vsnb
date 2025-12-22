@@ -1,9 +1,8 @@
 import shutil
 import sys
 
-from .plot_theme import set_vscode_theme
-from .plot_theme import vscode_theme
-from .progress import pqdm, prange
+from .plot_theme import set_vscode_theme, vscode_theme, lighten_colors, truncate_colormap
+from .progress import pqdm, prange  
 # CPU monitoring
 from .cpu_monitor import (
     CPUMonitor,

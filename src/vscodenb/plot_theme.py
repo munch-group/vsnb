@@ -2,9 +2,11 @@ import numpy as np
 import json5 as json
 import os
 import platform
+import random
 from pathlib import Path
 import matplotlib
 import matplotlib.pyplot as plt
+import matplotlib.colors as colors
 from matplotlib_inline.backend_inline import set_matplotlib_formats
 import seaborn as sns
 # import colorsys
@@ -16,8 +18,16 @@ from collections.abc import Sequence, MutableSequence, Callable
 from itertools import cycle
 from IPython.display import display, HTML
 
-# def random_color():
-#     return '#'+''.join(random.sample('0123456789ABCDEF', 6))
+def truncate_colormap(cmap, minval=0.0, maxval=1.0, n=100):
+    if isinstance(cmap, str):
+        cmap = plt.get_cmap(cmap)
+    new_cmap = colors.LinearSegmentedColormap.from_list(
+        'trunc({n},{a:.2f},{b:.2f})'.format(n=cmap.name, a=minval, b=maxval),
+        cmap(np.linspace(minval, maxval, n)))
+    return new_cmap
+
+def random_color():
+    return '#'+''.join(random.sample('0123456789ABCDEF', 6))
 
 def _get_color(n, lightness=0.4):
     color_cycle = cycle([matplotlib.colors.to_hex(c) for c in sns.husl_palette(n, l=lightness)])
