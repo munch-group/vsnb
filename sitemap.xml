@@ -2,90 +2,98 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://munch-group.github.io/vscodenb/pages/cpu_monitoring.html</loc>
-    <lastmod>2025-12-22T11:12:29.198Z</lastmod>
+    <lastmod>2025-12-22T11:18:53.394Z</lastmod>
   </url>
   <url>
     <loc>https://munch-group.github.io/vscodenb/pages/plot_theme.html</loc>
-    <lastmod>2025-12-22T11:12:29.200Z</lastmod>
+    <lastmod>2025-12-22T11:18:53.396Z</lastmod>
   </url>
   <url>
     <loc>https://munch-group.github.io/vscodenb/pages/progress.html</loc>
-    <lastmod>2025-12-22T11:12:29.200Z</lastmod>
+    <lastmod>2025-12-22T11:18:53.396Z</lastmod>
   </url>
   <url>
     <loc>https://munch-group.github.io/vscodenb/api/prange.html</loc>
-    <lastmod>2025-12-22T11:12:29.194Z</lastmod>
+    <lastmod>2025-12-22T11:18:53.390Z</lastmod>
   </url>
   <url>
     <loc>https://munch-group.github.io/vscodenb/api/SlurmMagic.html</loc>
-    <lastmod>2025-12-22T11:12:29.193Z</lastmod>
+    <lastmod>2025-12-22T11:18:53.389Z</lastmod>
   </url>
   <url>
     <loc>https://munch-group.github.io/vscodenb/api/monitor.html</loc>
-    <lastmod>2025-12-22T11:12:29.194Z</lastmod>
+    <lastmod>2025-12-22T11:18:53.390Z</lastmod>
   </url>
   <url>
     <loc>https://munch-group.github.io/vscodenb/api/functionname.html</loc>
-    <lastmod>2025-12-22T11:12:29.194Z</lastmod>
+    <lastmod>2025-12-22T11:18:53.389Z</lastmod>
   </url>
   <url>
     <loc>https://munch-group.github.io/vscodenb/api/ipython.html</loc>
-    <lastmod>2025-12-22T11:12:29.194Z</lastmod>
+    <lastmod>2025-12-22T11:18:53.389Z</lastmod>
   </url>
   <url>
     <loc>https://munch-group.github.io/vscodenb/api/set_vscode_theme.html</loc>
-    <lastmod>2025-12-22T11:12:29.194Z</lastmod>
+    <lastmod>2025-12-22T11:18:53.390Z</lastmod>
   </url>
   <url>
     <loc>https://munch-group.github.io/vscodenb/api/index.html</loc>
-    <lastmod>2025-12-22T11:12:29.194Z</lastmod>
+    <lastmod>2025-12-22T11:18:53.389Z</lastmod>
   </url>
   <url>
-    <loc>https://munch-group.github.io/vscodenb/api/Left.html</loc>
-    <lastmod>2025-12-22T11:12:29.193Z</lastmod>
+    <loc>https://munch-group.github.io/vscodenb/api/iridis.html</loc>
+    <lastmod>2025-12-22T11:18:53.389Z</lastmod>
   </url>
   <url>
     <loc>https://munch-group.github.io/vscodenb/api/detect_compute_nodes.html</loc>
-    <lastmod>2025-12-22T11:12:29.194Z</lastmod>
+    <lastmod>2025-12-22T11:18:53.389Z</lastmod>
+  </url>
+  <url>
+    <loc>https://munch-group.github.io/vscodenb/api/lighten_colors.html</loc>
+    <lastmod>2025-12-22T11:18:53.390Z</lastmod>
+  </url>
+  <url>
+    <loc>https://munch-group.github.io/vscodenb/api/Left.html</loc>
+    <lastmod>2025-12-22T11:18:53.389Z</lastmod>
   </url>
   <url>
     <loc>https://munch-group.github.io/vscodenb/api/pqdm.html</loc>
-    <lastmod>2025-12-22T11:12:29.194Z</lastmod>
+    <lastmod>2025-12-22T11:18:53.390Z</lastmod>
   </url>
   <url>
     <loc>https://munch-group.github.io/vscodenb/api/get_cached_nodes.html</loc>
-    <lastmod>2025-12-22T11:12:29.194Z</lastmod>
+    <lastmod>2025-12-22T11:18:53.389Z</lastmod>
   </url>
   <url>
     <loc>https://munch-group.github.io/vscodenb/api/scriptname.html</loc>
-    <lastmod>2025-12-22T11:12:29.194Z</lastmod>
+    <lastmod>2025-12-22T11:18:53.390Z</lastmod>
   </url>
   <url>
     <loc>https://munch-group.github.io/vscodenb/api/vscode_theme.html</loc>
-    <lastmod>2025-12-22T11:12:29.194Z</lastmod>
+    <lastmod>2025-12-22T11:18:53.390Z</lastmod>
   </url>
   <url>
     <loc>https://munch-group.github.io/vscodenb/api/truncate_colormap.html</loc>
-    <lastmod>2025-12-22T11:12:29.194Z</lastmod>
+    <lastmod>2025-12-22T11:18:53.390Z</lastmod>
   </url>
   <url>
     <loc>https://munch-group.github.io/vscodenb/api/CPUMonitorMagics.html</loc>
-    <lastmod>2025-12-22T11:12:29.193Z</lastmod>
+    <lastmod>2025-12-22T11:18:53.389Z</lastmod>
   </url>
   <url>
     <loc>https://munch-group.github.io/vscodenb/api/html_style.html</loc>
-    <lastmod>2025-12-22T11:12:29.194Z</lastmod>
+    <lastmod>2025-12-22T11:18:53.389Z</lastmod>
   </url>
   <url>
     <loc>https://munch-group.github.io/vscodenb/api/CPUMonitor.html</loc>
-    <lastmod>2025-12-22T11:12:29.193Z</lastmod>
+    <lastmod>2025-12-22T11:18:53.389Z</lastmod>
   </url>
   <url>
     <loc>https://munch-group.github.io/vscodenb/pages/slurm_magic.html</loc>
-    <lastmod>2025-12-22T11:12:29.200Z</lastmod>
+    <lastmod>2025-12-22T11:18:53.396Z</lastmod>
   </url>
   <url>
     <loc>https://munch-group.github.io/vscodenb/pages/overview.html</loc>
-    <lastmod>2025-12-22T11:12:29.198Z</lastmod>
+    <lastmod>2025-12-22T11:18:53.394Z</lastmod>
   </url>
 </urlset>

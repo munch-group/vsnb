@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>pqdm – vscodenb</title>
+<title>lighten_colors – vscodenb</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,8 +65,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../api/prange.html" rel="next">
-<link href="../api/iridis.html" rel="prev">
+<link href="../api/truncate_colormap.html" rel="next">
+<link href="../api/vscode_theme.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -150,7 +150,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../api/set_vscode_theme.html">vscodenb</a></li><li class="breadcrumb-item"><a href="../api/pqdm.html">pqdm</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../api/set_vscode_theme.html">vscodenb</a></li><li class="breadcrumb-item"><a href="../api/lighten_colors.html">lighten_colors</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -191,7 +191,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../api/lighten_colors.html" class="sidebar-item-text sidebar-link">
+  <a href="../api/lighten_colors.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">lighten_colors</span></a>
   </div>
 </li>
@@ -209,7 +209,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../api/pqdm.html" class="sidebar-item-text sidebar-link active">
+  <a href="../api/pqdm.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">pqdm</span></a>
   </div>
 </li>
@@ -285,24 +285,66 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#vscodenb.pqdm" id="toc-vscodenb.pqdm" class="nav-link active" data-scroll-target="#vscodenb.pqdm">pqdm</a></li>
+  <li><a href="#vscodenb.lighten_colors" id="toc-vscodenb.lighten_colors" class="nav-link active" data-scroll-target="#vscodenb.lighten_colors">lighten_colors</a>
+  <ul class="collapse">
+  <li><a href="#parameters" id="toc-parameters" class="nav-link" data-scroll-target="#parameters">Parameters</a></li>
+  <li><a href="#returns" id="toc-returns" class="nav-link" data-scroll-target="#returns">Returns</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../api/set_vscode_theme.html">vscodenb</a></li><li class="breadcrumb-item"><a href="../api/pqdm.html">pqdm</a></li></ol></nav></header>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../api/set_vscode_theme.html">vscodenb</a></li><li class="breadcrumb-item"><a href="../api/lighten_colors.html">lighten_colors</a></li></ol></nav></header>
 
 
 
 
-<section id="vscodenb.pqdm" class="level1">
-<h1>pqdm</h1>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>vscodenb.pqdm(iterable<span class="op">=</span><span class="va">None</span>, total<span class="op">=</span><span class="va">None</span>, desc<span class="op">=</span><span class="st">''</span>, persist<span class="op">=</span><span class="va">False</span>, <span class="op">**</span>kwargs)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>HTML progress bar for notebooks, tqdm for terminal. Renders as thin bar matching cpu_monitor.py style.</p>
-<p>Args: iterable: The iterable to iterate over. total: Total number of items (optional if iterable has <strong>len</strong>). desc: Description text shown next to the progress bar. persist: If False (default), the progress bar disappears after completion. If True, the progress bar remains visible in its completed state. **kwargs: Additional arguments passed to tqdm (terminal fallback).</p>
-<p>Usage: for item in pqdm(iterable, desc=“Processing”): process(item)</p>
+<section id="vscodenb.lighten_colors" class="level1">
+<h1>lighten_colors</h1>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>vscodenb.lighten_colors(</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    colors,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    factor<span class="op">=</span><span class="fl">0.0</span>,</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    n_colors<span class="op">=</span><span class="va">None</span>,</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    as_cmap<span class="op">=</span><span class="va">None</span>,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    target_lightness<span class="op">=</span><span class="va">None</span>,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Lighten a colormap or palette using HSL color space.</p>
+<section id="parameters" class="level2 doc-section doc-section-parameters">
+<h2 class="doc-section doc-section-parameters anchored" data-anchor-id="parameters">Parameters</h2>
+<dl>
+<dt><code><span class="parameter-name"><strong>colors</strong></span> <span class="parameter-annotation-sep">:</span> <span class="parameter-annotation">str, Colormap, or list</span></code></dt>
+<dd>
+<p>Matplotlib colormap, seaborn palette name, or list of colors</p>
+</dd>
+<dt><code><span class="parameter-name"><strong>factor</strong></span> <span class="parameter-annotation-sep">:</span> <span class="parameter-annotation"><a href="https://docs.python.org/3/library/functions.html#float">float</a></span> <span class="parameter-default-sep">=</span> <span class="parameter-default">0.0</span></code></dt>
+<dd>
+<p>Blend factor toward white (0 = original, 1 = white). Ignored if target_lightness is set.</p>
+</dd>
+<dt><code><span class="parameter-name"><strong>n_colors</strong></span> <span class="parameter-annotation-sep">:</span> <span class="parameter-annotation"><a href="https://docs.python.org/3/library/functions.html#int">int</a></span> <span class="parameter-default-sep">=</span> <span class="parameter-default">None</span></code></dt>
+<dd>
+<p>Number of colors for discrete palettes</p>
+</dd>
+<dt><code><span class="parameter-name"><strong>as_cmap</strong></span> <span class="parameter-annotation-sep">:</span> <span class="parameter-annotation"><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></span> <span class="parameter-default-sep">=</span> <span class="parameter-default">None</span></code></dt>
+<dd>
+<p>Force output type. If None, auto-detects based on input.</p>
+</dd>
+<dt><code><span class="parameter-name"><strong>target_lightness</strong></span> <span class="parameter-annotation-sep">:</span> <span class="parameter-annotation"><a href="https://docs.python.org/3/library/functions.html#float">float</a></span> <span class="parameter-default-sep">=</span> <span class="parameter-default">None</span></code></dt>
+<dd>
+<p>If set (0-1), all colors will be adjusted to this lightness value, preserving hue and saturation.</p>
+</dd>
+</dl>
+</section>
+<section id="returns" class="level2 doc-section doc-section-returns">
+<h2 class="doc-section doc-section-returns anchored" data-anchor-id="returns">Returns</h2>
+<dl>
+<dt><code><span class="parameter-name"></span> <span class="parameter-annotation-sep">:</span> <span class="parameter-annotation"><a href="https://docs.python.org/3/library/stdtypes.html#list">list</a> or <code>LinearSegmentedColormap</code></span></code></dt>
+<dd>
+
+</dd>
+</dl>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -708,13 +750,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../api/iridis.html" class="pagination-link" aria-label="iridis">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">iridis</span>
+      <a href="../api/vscode_theme.html" class="pagination-link" aria-label="vscode_theme">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">vscode_theme</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../api/prange.html" class="pagination-link" aria-label="prange">
-        <span class="nav-page-text">prange</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../api/truncate_colormap.html" class="pagination-link" aria-label="truncate_colormap">
+        <span class="nav-page-text">truncate_colormap</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
