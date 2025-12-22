@@ -8,6 +8,9 @@
 | --- | --- |
 | [set_vscode_theme](set_vscode_theme.qmd#vscodenb.set_vscode_theme) | Set the default theme for the graph plotter. |
 | [vscode_theme](vscode_theme.qmd#vscodenb.vscode_theme) |  |
+| [lighten_colors](lighten_colors.qmd#vscodenb.lighten_colors) | Lighten a colormap or palette using HSL color space. |
+| [truncate_colormap](truncate_colormap.qmd#vscodenb.truncate_colormap) |  |
+| [iridis](iridis.qmd#vscodenb.iridis) |  |
 | [pqdm](pqdm.qmd#vscodenb.pqdm) | HTML progress bar for notebooks, tqdm for terminal. |
 | [prange](prange.qmd#vscodenb.prange) | HTML progress bar for range() in notebooks, tqdm for terminal. |
 | [CPUMonitor](CPUMonitor.qmd#vscodenb.CPUMonitor) | Live CPU monitoring with adaptive display. |
@@ -16,7 +19,6 @@
 | [detect_compute_nodes](detect_compute_nodes.qmd#vscodenb.detect_compute_nodes) | Detect compute nodes and allocated CPUs. |
 | [get_cached_nodes](get_cached_nodes.qmd#vscodenb.get_cached_nodes) | Get cached compute nodes, detecting them if not already cached. |
 | [SlurmMagic](SlurmMagic.qmd#vscodenb.SlurmMagic) | IPython magics for running code in SLURM jobs. |
-| [truncate_colormap](truncate_colormap.qmd#vscodenb.truncate_colormap) |  |
 | [Left](Left.qmd#vscodenb.Left) |  |
 | [ipython](ipython.qmd#vscodenb.ipython) |  |
 | [html_style](html_style.qmd#vscodenb.html_style) |  |

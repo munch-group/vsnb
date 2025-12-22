@@ -6,6 +6,11 @@ vscodenb.set_vscode_theme py:function 1 api/set_vscode_theme.html#vscodenb.set_v
 vscodenb.plot_theme.set_vscode_theme py:function 1 api/set_vscode_theme.html#vscodenb.set_vscode_theme vscodenb.set_vscode_theme
 vscodenb.vscode_theme py:class 1 api/vscode_theme.html#vscodenb.vscode_theme -
 vscodenb.plot_theme.vscode_theme py:class 1 api/vscode_theme.html#vscodenb.vscode_theme vscodenb.vscode_theme
+vscodenb.lighten_colors py:function 1 api/lighten_colors.html#vscodenb.lighten_colors -
+vscodenb.plot_theme.lighten_colors py:function 1 api/lighten_colors.html#vscodenb.lighten_colors vscodenb.lighten_colors
+vscodenb.truncate_colormap py:function 1 api/truncate_colormap.html#vscodenb.truncate_colormap -
+vscodenb.plot_theme.truncate_colormap py:function 1 api/truncate_colormap.html#vscodenb.truncate_colormap vscodenb.truncate_colormap
+vscodenb.iridis py:attribute 1 api/iridis.html#vscodenb.iridis -
 vscodenb.pqdm py:function 1 api/pqdm.html#vscodenb.pqdm -
 vscodenb.progress.pqdm py:function 1 api/pqdm.html#vscodenb.pqdm vscodenb.pqdm
 vscodenb.prange py:function 1 api/prange.html#vscodenb.prange -
@@ -30,8 +35,6 @@ vscodenb.SlurmMagic.slurm py:function 1 api/SlurmMagic.html#vscodenb.SlurmMagic.
 vscodenb.slurm_magic.SlurmMagic.slurm py:function 1 api/SlurmMagic.html#vscodenb.SlurmMagic.slurm vscodenb.SlurmMagic.slurm
 vscodenb.SlurmMagic py:class 1 api/SlurmMagic.html#vscodenb.SlurmMagic -
 vscodenb.slurm_magic.SlurmMagic py:class 1 api/SlurmMagic.html#vscodenb.SlurmMagic vscodenb.SlurmMagic
-vscodenb.truncate_colormap py:function 1 api/truncate_colormap.html#vscodenb.truncate_colormap -
-vscodenb.utils.truncate_colormap py:function 1 api/truncate_colormap.html#vscodenb.truncate_colormap vscodenb.truncate_colormap
 vscodenb.Left py:class 1 api/Left.html#vscodenb.Left -
 vscodenb.utils.Left py:class 1 api/Left.html#vscodenb.Left vscodenb.Left
 vscodenb.ipython py:attribute 1 api/ipython.html#vscodenb.ipython -
