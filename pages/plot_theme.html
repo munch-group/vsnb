@@ -194,15 +194,15 @@ Tip
 <p>You can open <code>settings.json</code> from the command palette (Cmd-Shift-p) by typing “user settings” and select “Preferences: Open User Settings (JSON)”.</p>
 </div>
 </div>
-<div id="3bb4c7fe" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-19T15:28:34.644138Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-19T15:28:34.643794Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-19T15:28:34.928756Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-19T15:28:34.928035Z&quot;}}" data-execution_count="1">
+<div id="3bb4c7fe" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-22T11:07:55.333369Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-22T11:07:55.333267Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-22T11:07:55.628527Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-22T11:07:55.628048Z&quot;}}" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> numpy.random <span class="im">import</span> random</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="4d0c8e6c" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-19T15:28:34.930376Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-19T15:28:34.930194Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-19T15:28:34.932252Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-19T15:28:34.931799Z&quot;}}" data-execution_count="2">
+<div id="4d0c8e6c" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-22T11:07:55.630287Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-22T11:07:55.630123Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-22T11:07:55.632003Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-22T11:07:55.631595Z&quot;}}" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'figure.figsize'</span>] <span class="op">=</span> (<span class="dv">5</span>, <span class="fl">3.7</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Vanilla plot without theme:</p>
-<div id="e469025b" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-19T15:28:34.933540Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-19T15:28:34.933427Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-19T15:28:34.997737Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-19T15:28:34.997243Z&quot;}}" data-execution_count="3">
+<div id="e469025b" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-22T11:07:55.633312Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-22T11:07:55.633215Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-22T11:07:55.695227Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-22T11:07:55.694727Z&quot;}}" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>plt.scatter(random(<span class="dv">10</span>), random(<span class="dv">10</span>)) <span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
@@ -213,7 +213,7 @@ Tip
 </div>
 </div>
 <p>Style a single plot:</p>
-<div id="93ff301b" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-19T15:28:34.999263Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-19T15:28:34.999136Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-19T15:28:36.389123Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-19T15:28:36.388689Z&quot;}}" data-execution_count="4">
+<div id="93ff301b" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-22T11:07:55.696663Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-22T11:07:55.696550Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-22T11:07:56.772558Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-22T11:07:56.772116Z&quot;}}" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> vscodenb <span class="im">import</span> vscode_theme <span class="im">as</span> theme</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> theme():</span>
@@ -253,7 +253,7 @@ div.progress-bar { /* Inner bar */
 </style>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Overriding theme from NOTEBOOK_THEME environment variable. &lt;ipykernel.iostream.OutStream object at 0x103461510&gt;</code></pre>
+<pre><code>Overriding theme from NOTEBOOK_THEME environment variable. &lt;ipykernel.iostream.OutStream object at 0x104077550&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 
@@ -304,30 +304,30 @@ div.progress-bar { /* Inner bar */
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><a href="plot_theme_files/figure-html/cell-5-output-4.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="plot_theme_files/figure-html/cell-5-output-4.png" width="439" height="331" class="figure-img"></a></p>
+<p><a href="plot_theme_files/figure-html/cell-5-output-4.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="plot_theme_files/figure-html/cell-5-output-4.png" width="439" height="328" class="figure-img"></a></p>
 </figure>
 </div>
 </div>
 </div>
 <p>Default plotting style is preserved:</p>
-<div id="c174ddbe" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-19T15:28:36.390604Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-19T15:28:36.390439Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-19T15:28:36.434866Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-19T15:28:36.434446Z&quot;}}" data-execution_count="5">
+<div id="c174ddbe" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-22T11:07:56.774098Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-22T11:07:56.773926Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-22T11:07:56.816445Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-22T11:07:56.815950Z&quot;}}" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>plt.scatter(random(<span class="dv">10</span>), random(<span class="dv">10</span>)) <span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><a href="plot_theme_files/figure-html/cell-6-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="plot_theme_files/figure-html/cell-6-output-1.png" width="439" height="329" class="figure-img"></a></p>
+<p><a href="plot_theme_files/figure-html/cell-6-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="plot_theme_files/figure-html/cell-6-output-1.png" width="439" height="328" class="figure-img"></a></p>
 </figure>
 </div>
 </div>
 </div>
 <p>Set theme for all plots:</p>
-<div id="a4212950" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-19T15:28:36.436181Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-19T15:28:36.436086Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-19T15:28:36.488069Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-19T15:28:36.487624Z&quot;}}" data-execution_count="6">
+<div id="a4212950" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-22T11:07:56.817820Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-22T11:07:56.817718Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-22T11:07:56.870383Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-22T11:07:56.869854Z&quot;}}" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> vscodenb</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>vscodenb.set_vscode_theme()</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>plt.scatter(random(<span class="dv">10</span>), random(<span class="dv">10</span>)) <span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Overriding theme from NOTEBOOK_THEME environment variable. &lt;ipykernel.iostream.OutStream object at 0x103461510&gt;</code></pre>
+<pre><code>Overriding theme from NOTEBOOK_THEME environment variable. &lt;ipykernel.iostream.OutStream object at 0x104077550&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 
@@ -378,27 +378,27 @@ div.progress-bar { /* Inner bar */
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><a href="plot_theme_files/figure-html/cell-7-output-3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="plot_theme_files/figure-html/cell-7-output-3.png" width="439" height="328" class="figure-img"></a></p>
+<p><a href="plot_theme_files/figure-html/cell-7-output-3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="plot_theme_files/figure-html/cell-7-output-3.png" width="449" height="328" class="figure-img"></a></p>
 </figure>
 </div>
 </div>
 </div>
-<div id="8e8e2b7a" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-19T15:28:36.489330Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-19T15:28:36.489240Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-19T15:28:36.538865Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-19T15:28:36.538360Z&quot;}}" data-execution_count="7">
+<div id="8e8e2b7a" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-22T11:07:56.871770Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-22T11:07:56.871663Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-22T11:07:56.913492Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-22T11:07:56.913055Z&quot;}}" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>plt.scatter(random(<span class="dv">10</span>), random(<span class="dv">10</span>)) <span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><a href="plot_theme_files/figure-html/cell-8-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="plot_theme_files/figure-html/cell-8-output-1.png" width="448" height="328" class="figure-img"></a></p>
+<p><a href="plot_theme_files/figure-html/cell-8-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="plot_theme_files/figure-html/cell-8-output-1.png" width="439" height="328" class="figure-img"></a></p>
 </figure>
 </div>
 </div>
 </div>
 <p>Even with global styling set, the context manager is useful for setting figsize and font_scale for individual plots:</p>
-<div id="f2cb5033" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-19T15:28:36.540194Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-19T15:28:36.540090Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-19T15:28:36.579656Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-19T15:28:36.579188Z&quot;}}" data-execution_count="8">
+<div id="f2cb5033" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-22T11:07:56.914873Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-22T11:07:56.914762Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-22T11:07:56.953983Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-22T11:07:56.953523Z&quot;}}" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> theme(font_scale<span class="op">=</span><span class="fl">1.5</span>, figsize<span class="op">=</span>(<span class="dv">2</span>,<span class="dv">1</span>)):</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    plt.scatter(random(<span class="dv">10</span>), random(<span class="dv">10</span>)) <span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Overriding theme from NOTEBOOK_THEME environment variable. &lt;ipykernel.iostream.OutStream object at 0x103461510&gt;</code></pre>
+<pre><code>Overriding theme from NOTEBOOK_THEME environment variable. &lt;ipykernel.iostream.OutStream object at 0x104077550&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 
@@ -449,17 +449,17 @@ div.progress-bar { /* Inner bar */
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><a href="plot_theme_files/figure-html/cell-9-output-3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="plot_theme_files/figure-html/cell-9-output-3.png" width="207" height="123" class="figure-img"></a></p>
+<p><a href="plot_theme_files/figure-html/cell-9-output-3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="plot_theme_files/figure-html/cell-9-output-3.png" width="215" height="120" class="figure-img"></a></p>
 </figure>
 </div>
 </div>
 </div>
-<div id="7a12c3c4" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-19T15:28:36.580924Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-19T15:28:36.580829Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-19T15:28:36.658012Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-19T15:28:36.657541Z&quot;}}" data-execution_count="9">
+<div id="7a12c3c4" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-22T11:07:56.955417Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-22T11:07:56.955311Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-22T11:07:57.032652Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-22T11:07:57.032206Z&quot;}}" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> theme(font_scale<span class="op">=</span><span class="fl">0.8</span>, figsize<span class="op">=</span>(<span class="dv">7</span>,<span class="dv">3</span>)):</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    plt.subplot(<span class="dv">121</span>).scatter(random(<span class="dv">10</span>), random(<span class="dv">10</span>))</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    plt.subplot(<span class="dv">122</span>).scatter(random(<span class="dv">10</span>), random(<span class="dv">10</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Overriding theme from NOTEBOOK_THEME environment variable. &lt;ipykernel.iostream.OutStream object at 0x103461510&gt;</code></pre>
+<pre><code>Overriding theme from NOTEBOOK_THEME environment variable. &lt;ipykernel.iostream.OutStream object at 0x104077550&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 
@@ -510,16 +510,16 @@ div.progress-bar { /* Inner bar */
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><a href="plot_theme_files/figure-html/cell-10-output-3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="plot_theme_files/figure-html/cell-10-output-3.png" width="594" height="277" class="figure-img"></a></p>
+<p><a href="plot_theme_files/figure-html/cell-10-output-3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="plot_theme_files/figure-html/cell-10-output-3.png" width="594" height="274" class="figure-img"></a></p>
 </figure>
 </div>
 </div>
 </div>
-<div id="49dec709" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-19T15:28:36.659597Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-19T15:28:36.659458Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-19T15:28:36.722853Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-19T15:28:36.722388Z&quot;}}" data-execution_count="10">
+<div id="49dec709" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-22T11:07:57.034192Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-22T11:07:57.034077Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-22T11:07:57.088274Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-22T11:07:57.087798Z&quot;}}" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> theme(frame<span class="op">=</span><span class="va">True</span>):</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    plt.scatter(random(<span class="dv">10</span>), random(<span class="dv">10</span>)) <span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Overriding theme from NOTEBOOK_THEME environment variable. &lt;ipykernel.iostream.OutStream object at 0x103461510&gt;</code></pre>
+<pre><code>Overriding theme from NOTEBOOK_THEME environment variable. &lt;ipykernel.iostream.OutStream object at 0x104077550&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 
@@ -570,16 +570,16 @@ div.progress-bar { /* Inner bar */
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><a href="plot_theme_files/figure-html/cell-11-output-3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="plot_theme_files/figure-html/cell-11-output-3.png" width="439" height="328" class="figure-img"></a></p>
+<p><a href="plot_theme_files/figure-html/cell-11-output-3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="plot_theme_files/figure-html/cell-11-output-3.png" width="443" height="328" class="figure-img"></a></p>
 </figure>
 </div>
 </div>
 </div>
-<div id="3c075020" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-19T15:28:36.724068Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-19T15:28:36.723976Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-19T15:28:36.774494Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-19T15:28:36.774041Z&quot;}}" data-execution_count="11">
+<div id="3c075020" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-22T11:07:57.089633Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-22T11:07:57.089514Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-22T11:07:57.149948Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-22T11:07:57.149447Z&quot;}}" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> theme(style<span class="op">=</span><span class="st">'ticks'</span>):</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    plt.scatter(random(<span class="dv">10</span>), random(<span class="dv">10</span>)) <span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Overriding theme from NOTEBOOK_THEME environment variable. &lt;ipykernel.iostream.OutStream object at 0x103461510&gt;</code></pre>
+<pre><code>Overriding theme from NOTEBOOK_THEME environment variable. &lt;ipykernel.iostream.OutStream object at 0x104077550&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 
@@ -630,16 +630,16 @@ div.progress-bar { /* Inner bar */
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><a href="plot_theme_files/figure-html/cell-12-output-3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="plot_theme_files/figure-html/cell-12-output-3.png" width="439" height="328" class="figure-img"></a></p>
+<p><a href="plot_theme_files/figure-html/cell-12-output-3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="plot_theme_files/figure-html/cell-12-output-3.png" width="439" height="333" class="figure-img"></a></p>
 </figure>
 </div>
 </div>
 </div>
-<div id="bd23d9d5" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-19T15:28:36.775787Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-19T15:28:36.775674Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-19T15:28:36.827938Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-19T15:28:36.827554Z&quot;}}" data-execution_count="12">
+<div id="bd23d9d5" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-22T11:07:57.151367Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-22T11:07:57.151256Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-22T11:07:57.213863Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-22T11:07:57.213346Z&quot;}}" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> theme(style<span class="op">=</span><span class="st">'ticks'</span>, frame<span class="op">=</span><span class="va">True</span>):</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    plt.scatter(random(<span class="dv">10</span>), random(<span class="dv">10</span>)) <span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Overriding theme from NOTEBOOK_THEME environment variable. &lt;ipykernel.iostream.OutStream object at 0x103461510&gt;</code></pre>
+<pre><code>Overriding theme from NOTEBOOK_THEME environment variable. &lt;ipykernel.iostream.OutStream object at 0x104077550&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 
